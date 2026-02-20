@@ -1,0 +1,49 @@
+# Endpoint Lifecycle Model
+
+Modern endpoint platforms should be designed around lifecycle stages rather than tools.
+This model separates tooling from architecture and focuses on governance, identity trust, and security alignment across the device lifecycle.
+
+## 1. Procurement
+- Hardware standardization
+- Vendor abstraction strategy
+- Asset tagging and identity planning
+
+## 2. Enrollment
+- Autopilot registration
+- Azure AD join / Hybrid join decision
+- Enrollment Status Page optimization
+
+## 3. Configuration
+- Baseline policy layering
+- Settings catalog governance
+- Application deployment strategy
+
+## 4. Compliance
+- Device health attestation
+- Compliance policy evaluation
+- Risk signal integration
+
+## 5. Risk Evaluation
+- Defender for Endpoint risk level
+- Vulnerability exposure tracking
+- Security posture alignment
+
+## 6. Access Decision
+- Conditional Access device filters
+- Compliance-based access control
+- Risk-based session enforcement
+
+## 7. Monitoring & Drift Detection
+- Policy version control
+- Configuration drift monitoring
+- Reporting automation
+
+## 8. Retirement
+- Device wipe / reset
+- Autopilot cleanup
+- Identity removal
+- Asset lifecycle closure
+
+  ## Lifecycle Flow
+
+Procurement → Enrollment → Configuration → Compliance → Risk Evaluation → Access Decision → Monitoring → Retirement
