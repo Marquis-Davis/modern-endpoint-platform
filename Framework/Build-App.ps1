@@ -7,7 +7,7 @@ $RepoRoot = Split-Path $PSScriptRoot -Parent
 
 $AppRoot = Join-Path $RepoRoot "Applications\$Application"
 
-$Tool = Join-Path $RepoRoot "Tools\IntuneWinAppUtil.exe"
+$Tool = "C:\Lab\Tools\Microsoft-Win32-Content-Prep-Tool-master\IntuneWinAppUtil.exe"
 
 $Output = Join-Path $AppRoot "Package"
 
