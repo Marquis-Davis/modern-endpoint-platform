@@ -83,7 +83,7 @@ Write-Host "Packaging application..."
 Write-Host ""
 
 & $IntuneWinAppUtil `
-    -c $ApplicationFolder `
+    -c $SourceFolder `
     -s $App.Source.SetupFile `
     -o $PackageFolder `
     -q

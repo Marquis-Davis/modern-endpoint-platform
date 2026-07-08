@@ -4,25 +4,36 @@
     "Publisher": "",
     "Version": "1.0.0",
     "Category": "",
-    "Description": ""
+    "Description": "",
+    "Developer": "",
+    "Owner": ""
   },
 
   "Source": {
-    "SetupFile": "",
+    "InstallerFile": "",
     "PackageFolder": "Package",
     "SourceFolder": "Source"
   },
 
   "Install": {
     "Command": "powershell.exe -ExecutionPolicy Bypass -File Install.ps1",
-    "UninstallCommand": "powershell.exe -ExecutionPolicy Bypass -File Uninstall.ps1",
+    "Arguments": "",
     "Context": "System",
-    "RestartBehavior": "Suppress"
+    "RestartBehavior": "Suppress",
+    "TimeoutMinutes": 60
+  },
+
+  "Uninstall": {
+    "Command": "powershell.exe -ExecutionPolicy Bypass -File Uninstall.ps1",
+    "UninstallerFile": "",
+    "Arguments": ""
   },
 
   "Detection": {
     "Type": "PowerShell",
-    "Script": "Detection.ps1"
+    "Script": "Detection.ps1",
+    "RunAs32Bit": false,
+    "EnforceSignatureCheck": false
   },
 
   "Requirements": {
@@ -30,8 +41,8 @@
     "MinimumSupportedWindowsRelease": "W11_22H2"
   },
 
-"Deployment": {
+  "Deployment": {
     "Ring": "Pilot",
     "Intent": "Required"
-}
+  }
 }
