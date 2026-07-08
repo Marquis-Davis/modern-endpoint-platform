@@ -1,13 +1,13 @@
 {
   "Application": {
     "Name": "ZoomIt",
-    "Publisher": "",
-    "Version": "1.0.0",
-    "Category": "",
-    "Description": ""
+    "Publisher": "Microsoft",
+    "Version": "v12.1",
+    "Category": "Utilities",
+    "Description": "ZoomIt"
   },
   "Source": {
-    "SetupFile": "",
+    "SetupFile": "Install.ps1",
     "PackageFolder": "Package",
     "SourceFolder": "Source"
   },
@@ -26,7 +26,7 @@
     "MinimumSupportedWindowsRelease": "W11_22H2"
   },
   "Deployment": {
-    "AssignmentGroup": "",
+    "AssignmentGroup": "APP-ZoomIt-Required",
     "Ring": "Pilot",
     "Intent": "Required"
   }

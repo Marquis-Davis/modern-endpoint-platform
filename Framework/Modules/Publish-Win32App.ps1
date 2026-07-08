@@ -25,8 +25,8 @@ function Publish-Win32App {
     Write-Host "Creating Requirement Rule..." -ForegroundColor Yellow
 
     $RequirementRule = New-IntuneWin32AppRequirementRule `
-        -Architecture AllWithARM64 `
-        -MinimumSupportedWindowsRelease W11_22H2
+        -Architecture $Manifest.Requirements.Architecture `
+        -MinimumSupportedWindowsRelease $Manifest.Requirements.MinimumSupportedWindowsRelease
 
     Write-Host ""
     Write-Host "Uploading Win32 App..." -ForegroundColor Yellow
@@ -43,8 +43,8 @@ function Publish-Win32App {
             -Owner $Manifest.Application.Publisher `
             -InstallCommandLine $Manifest.Install.Command `
             -UninstallCommandLine $Manifest.Install.UninstallCommand `
-            -InstallExperience System `
-            -RestartBehavior Suppress `
+            -InstallExperience $Manifest.Install.Context `
+            -RestartBehavior $Manifest.Install.RestartBehavior `
             -DetectionRule $DetectionRule `
             -RequirementRule $RequirementRule
 
@@ -55,7 +55,7 @@ function Publish-Win32App {
             -Include `
             -ID $Win32App.Id `
             -GroupID $DeploymentGroup.Id `
-            -Intent Required
+            -Intent $Manifest.Deployment.Intent
 
         Write-Host ""
         Write-Host "Application published successfully!" -ForegroundColor Green
