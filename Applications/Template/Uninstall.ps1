@@ -1,17 +1,23 @@
 # ============================================================================
-# Application : CMTrace
-# Purpose     : Uninstall CMTrace
+# Generic Uninstall Script
 # ============================================================================
 
-$Destination = "$env:ProgramFiles\CMTrace.exe"
+$Manifest = Get-Content (Join-Path $PSScriptRoot "app.json") -Raw | ConvertFrom-Json
 
-Write-Host "Removing CMTrace..."
+$Application = $Manifest.Application.Name
+$Uninstaller = Join-Path $PSScriptRoot ("Source\" + $Manifest.Install.UninstallFile)
 
-if (Test-Path $Destination)
+Write-Host "Uninstalling $Application..."
+
+if (!(Test-Path $Uninstaller))
 {
-    Remove-Item $Destination -Force
+    throw "Uninstaller not found: $Uninstaller"
 }
 
-Write-Host "Removal Complete."
+Start-Process `
+    -FilePath $Uninstaller `
+    -ArgumentList $Manifest.Install.UninstallArguments `
+    -Wait `
+    -NoNewWindow
 
-exit 0
+exit $LASTEXITCODE

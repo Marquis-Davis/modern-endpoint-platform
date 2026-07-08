@@ -1,19 +1,20 @@
 # ============================================================================
-# Application : CMTrace
-# Purpose     : Install CMTrace
-# Author      : Your Name
+# Generic Install Script
 # ============================================================================
 
-$Source = Join-Path $PSScriptRoot "..\Source\CMTrace.exe"
-$Destination = "$env:ProgramFiles\CMTrace.exe"
+$Manifest = Get-Content (Join-Path $PSScriptRoot "app.json") -Raw | ConvertFrom-Json
 
-Write-Host "Installing CMTrace..."
+$Installer = Join-Path $PSScriptRoot ("Source\" + $Manifest.Source.SetupFile)
 
-Copy-Item `
-    -Path $Source `
-    -Destination $Destination `
-    -Force
+if (!(Test-Path $Installer))
+{
+    throw "Installer not found: $Installer"
+}
 
-Write-Host "Installation Complete."
+Write-Host "Installing $($Manifest.Application.Name)..."
 
-exit 0
+Start-Process `
+    -FilePath $Installer `
+    -Wait
+
+exit $LASTEXITCODE
