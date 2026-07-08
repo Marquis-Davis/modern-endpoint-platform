@@ -1,0 +1,32 @@
+{
+  "Application": {
+    "Name": "CMTrace",
+    "Publisher": "Microsoft",
+    "Version": "1.0.0",
+    "Category": "Utilities",
+    "Description": "CMTrace log viewer"
+  },
+
+  "Source": {
+    "SetupFile": "Install.ps1",
+    "PackageFolder": "Package",
+    "SourceFolder": "Source"
+  },
+
+  "Install": {
+    "Command": "powershell.exe -ExecutionPolicy Bypass -File Install.ps1",
+    "UninstallCommand": "powershell.exe -ExecutionPolicy Bypass -File Uninstall.ps1",
+    "Context": "System",
+    "RestartBehavior": "Suppress"
+  },
+
+  "Detection": {
+    "Type": "PowerShell",
+    "Script": "Detection.ps1"
+  },
+
+  "Deployment": {
+    "Ring": "Pilot",
+    "Intent": "Required"
+  }
+}
