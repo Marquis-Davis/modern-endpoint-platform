@@ -3,25 +3,97 @@ param(
     [string]$Application
 )
 
-$RepoRoot = Split-Path $PSScriptRoot -Parent
-
-$AppRoot = Join-Path $RepoRoot "Applications\$Application"
-
-$Tool = "C:\Lab\Tools\Microsoft-Win32-Content-Prep-Tool-master\IntuneWinAppUtil.exe"
-
-$Output = Join-Path $AppRoot "Package"
-
-$Setup = "Scripts\Install.ps1"
+# Banner
 
 Write-Host ""
-Write-Host "Building $Application..."
+Write-Host "=========================="
+Write-Host " Building $Application"
+Write-Host "=========================="
 Write-Host ""
 
-& $Tool `
-    -c $AppRoot `
-    -s $Setup `
-    -o $Output `
+# Repository
+
+$RepositoryRoot   = Split-Path $PSScriptRoot -Parent
+$ApplicationFolder = Join-Path $RepositoryRoot "Applications\$Application"
+$Manifest          = Join-Path $ApplicationFolder "app.json"
+
+if (!(Test-Path $Manifest))
+{
+    throw "Unable to locate $Manifest"
+}
+
+# Read Manifest
+
+$App = Get-Content $Manifest -Raw | ConvertFrom-Json
+
+# Validate
+
+$SourceFolder  = Join-Path $ApplicationFolder $App.Source.SourceFolder
+$PackageFolder = Join-Path $ApplicationFolder $App.Source.PackageFolder
+$SetupFile     = Join-Path $ApplicationFolder $App.Source.SetupFile
+
+Write-Host "Validating application structure..."
+
+if (!(Test-Path $SourceFolder))
+{
+    throw "Source folder not found: $SourceFolder"
+}
+
+if (!(Test-Path $PackageFolder))
+{
+    New-Item -ItemType Directory -Path $PackageFolder | Out-Null
+    Write-Host "Created Package folder."
+}
+
+if (!(Test-Path $SetupFile))
+{
+    throw "Setup file not found: $SetupFile"
+}
+
+Write-Host ""
+Write-Host "Validation complete."
+Write-Host ""
+
+# Application Information
+
+Write-Host "Application : $($App.Application.Name)"
+Write-Host "Publisher   : $($App.Application.Publisher)"
+Write-Host "Version     : $($App.Application.Version)"
+Write-Host "Category    : $($App.Application.Category)"
+Write-Host "Ring        : $($App.Deployment.Ring)"
+
+# Locate Tools
+
+$ToolsFolder = Join-Path $RepositoryRoot "Tools\Microsoft-Win32-Content-Prep-Tool-master"
+$IntuneWinAppUtil = Join-Path $ToolsFolder "IntuneWinAppUtil.exe"
+
+if (!(Test-Path $IntuneWinAppUtil))
+{
+    throw "Unable to locate IntuneWinAppUtil.exe"
+}
+
+# Package the application
+# Build Package
+
+$OutputFile = Join-Path $PackageFolder "Install.intunewin"
+
+Write-Host ""
+Write-Host "Packaging application..."
+Write-Host ""
+
+& $IntuneWinAppUtil `
+    -c $ApplicationFolder `
+    -s $App.Source.SetupFile `
+    -o $PackageFolder `
     -q
 
+    # Verify 
+    if (!(Test-Path $OutputFile))
+{
+    throw "Package creation failed."
+}
+
 Write-Host ""
-Write-Host "Done."
+Write-Host "Package created successfully!"
+Write-Host "Output: $OutputFile"
+Write-Host ""
