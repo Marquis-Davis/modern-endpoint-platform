@@ -25,14 +25,14 @@ Write-Host ""
 # Repository
 #============================================================
 
-$RepositoryRoot = Split-Path $PSScriptRoot -Parent
+$RepositoryRoot    = Split-Path $PSScriptRoot -Parent
 $ApplicationFolder = Join-Path $RepositoryRoot "Applications\$Application"
 
 $Manifest = Join-Path $ApplicationFolder "app.json"
 $Package  = Join-Path $ApplicationFolder "Package\Install.intunewin"
 
-Write-Host "Repository Root : $RepositoryRoot"
-Write-Host "Application     : $Application"
+Write-Host "Repository Root  : $RepositoryRoot"
+Write-Host "Application      : $Application"
 Write-Host "ApplicationFolder: $ApplicationFolder"
 Write-Host ""
 
@@ -40,11 +40,13 @@ Write-Host ""
 # Validation
 #============================================================
 
-if (!(Test-Path $Manifest)) {
+if (!(Test-Path $Manifest))
+{
     throw "Unable to locate manifest: $Manifest"
 }
 
-if (!(Test-Path $Package)) {
+if (!(Test-Path $Package))
+{
     throw "Unable to locate package: $Package"
 }
 
@@ -54,12 +56,15 @@ if (!(Test-Path $Package)) {
 
 $App = Get-Content $Manifest -Raw | ConvertFrom-Json
 
+# Automatically generate deployment group name
+$GroupName = "APP-$($App.Application.Name)-$($App.Deployment.Intent)"
+
 Write-Host "Application : $($App.Application.Name)"
 Write-Host "Publisher   : $($App.Application.Publisher)"
 Write-Host "Version     : $($App.Application.Version)"
 Write-Host "Category    : $($App.Application.Category)"
 Write-Host "Intent      : $($App.Deployment.Intent)"
-Write-Host "Group       : $($App.Deployment.AssignmentGroup)"
+Write-Host "Group       : $GroupName"
 Write-Host ""
 
 #============================================================
@@ -82,14 +87,13 @@ Write-Host "Connected Graph: $((Get-MgContext).Account)" -ForegroundColor Green
 Write-Host ""
 
 #============================================================
-# Connect IntuneWin32App Module
+# Connect IntuneWin32App
 #============================================================
 
 Write-Host "Connecting IntuneWin32App..." -ForegroundColor Yellow
 
 $TenantID = (Get-MgContext).TenantId
 $ClientID = (Get-MgContext).ClientId
-
 
 Connect-MSIntuneGraph `
     -TenantID $TenantID `
@@ -100,16 +104,26 @@ Write-Host "Connected IntuneWin32App." -ForegroundColor Green
 Write-Host ""
 
 #============================================================
-# Lookup Deployment Group
+# Lookup / Create Deployment Group
 #============================================================
 
 Write-Host "Looking up deployment group..." -ForegroundColor Yellow
 
-$DeploymentGroup = Get-MgGroup -All |
-    Where-Object DisplayName -eq $App.Deployment.AssignmentGroup
+$DeploymentGroup = Get-MgGroup `
+    -Filter "displayName eq '$GroupName'" `
+    -ConsistencyLevel eventual
 
-if (-not $DeploymentGroup) {
-    throw "Deployment group '$($App.Deployment.AssignmentGroup)' not found."
+if (-not $DeploymentGroup)
+{
+    Write-Host "Group not found. Creating '$GroupName'..." -ForegroundColor Yellow
+
+    $DeploymentGroup = New-MgGroup `
+        -DisplayName $GroupName `
+        -MailEnabled:$false `
+        -MailNickname ($GroupName -replace '[^a-zA-Z0-9]', '') `
+        -SecurityEnabled:$true
+
+    Write-Host "Group created." -ForegroundColor Green
 }
 
 Write-Host ""

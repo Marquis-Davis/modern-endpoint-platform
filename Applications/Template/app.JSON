@@ -30,9 +30,8 @@
     "MinimumSupportedWindowsRelease": "W11_22H2"
   },
 
-  "Deployment": {
-    "AssignmentGroup": "",
+"Deployment": {
     "Ring": "Pilot",
     "Intent": "Required"
-  }
+}
 }
