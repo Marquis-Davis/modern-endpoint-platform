@@ -60,7 +60,8 @@ Write-Host "Application : $($App.Application.Name)"
 Write-Host "Publisher   : $($App.Application.Publisher)"
 Write-Host "Version     : $($App.Application.Version)"
 Write-Host "Category    : $($App.Application.Category)"
-Write-Host "Ring        : $($App.Deployment.Ring)"
+Write-Host "Intent      : $($App.Deployment.Intent)"
+Write-Host "Group       : $($App.Deployment.AssignmentGroup)"
 
 # Locate Tools
 

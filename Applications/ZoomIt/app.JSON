@@ -1,32 +1,32 @@
 {
   "Application": {
-    "Name": "CMTrace",
-    "Publisher": "Microsoft",
+    "Name": "ZoomIt",
+    "Publisher": "",
     "Version": "1.0.0",
-    "Category": "Utilities",
-    "Description": "CMTrace log viewer"
+    "Category": "",
+    "Description": ""
   },
-
   "Source": {
-    "SetupFile": "Install.ps1",
-    "SourceFolder": "Source",
-    "PackageFolder": "Package"
+    "SetupFile": "",
+    "PackageFolder": "Package",
+    "SourceFolder": "Source"
   },
-
   "Install": {
     "Command": "powershell.exe -ExecutionPolicy Bypass -File Install.ps1",
     "UninstallCommand": "powershell.exe -ExecutionPolicy Bypass -File Uninstall.ps1",
     "Context": "System",
     "RestartBehavior": "Suppress"
   },
-
   "Detection": {
     "Type": "PowerShell",
     "Script": "Detection.ps1"
   },
-
+  "Requirements": {
+    "Architecture": "AllWithARM64",
+    "MinimumSupportedWindowsRelease": "W11_22H2"
+  },
   "Deployment": {
-    "AssignmentGroup": "APP-CMTrace-Required",
+    "AssignmentGroup": "",
     "Ring": "Pilot",
     "Intent": "Required"
   }
