@@ -29,7 +29,18 @@ $RepositoryRoot    = Split-Path $PSScriptRoot -Parent
 $ApplicationFolder = Join-Path $RepositoryRoot "Applications\$Application"
 
 $Manifest = Join-Path $ApplicationFolder "app.json"
-$Package  = Join-Path $ApplicationFolder "Package\Install.intunewin"
+
+$Package = Get-ChildItem `
+    -Path (Join-Path $ApplicationFolder "Package") `
+    -Filter *.intunewin |
+    Select-Object -First 1
+
+if (-not $Package)
+{
+    throw "Unable to locate a .intunewin package in '$ApplicationFolder\Package'."
+}
+
+$Package = $Package.FullName
 
 Write-Host "Repository Root  : $RepositoryRoot"
 Write-Host "Application      : $Application"

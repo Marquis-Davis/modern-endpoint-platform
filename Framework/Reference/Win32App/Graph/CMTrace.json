@@ -1,0 +1,110 @@
+{
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "minimumSupportedWindowsRelease": "Windows11_22H2",
+  "activeUninstallScript": null,
+  "publishingState": "published",
+  "minimumFreeDiskSpaceInMB": null,
+  "size": 182016,
+  "minimumSupportedOperatingSystem": {
+    "v10_2004": false,
+    "v10_1909": false,
+    "v10_1607": false,
+    "v10_1903": false,
+    "v10_1803": false,
+    "v8_0": false,
+    "v10_2H20": false,
+    "v8_1": false,
+    "v10_1809": false,
+    "v10_21H1": false,
+    "v10_0": false,
+    "v10_1709": false,
+    "v10_1703": false
+  },
+  "rules": [
+    {
+      "@odata.type": "#microsoft.graph.win32LobAppPowerShellScriptRule",
+      "scriptContent": "IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09DQojIEFwcGxpY2F0aW9uIDogQ01UcmFjZQ0KIyBQdXJwb3NlICAgICA6IERldGVjdGlvbiBTY3JpcHQNCiMgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQ0KDQokRGVzdGluYXRpb24gPSAiJGVudjpQcm9ncmFtRmlsZXNcQ01UcmFjZS5leGUiDQoNCmlmIChUZXN0LVBhdGggJERlc3RpbmF0aW9uKQ0Kew0KICAgIFdyaXRlLU91dHB1dCAiSW5zdGFsbGVkIg0KICAgIGV4aXQgMA0KfQ0KDQpleGl0IDE=",
+      "enforceSignatureCheck": false,
+      "ruleType": "detection",
+      "displayName": null,
+      "runAs32Bit": false,
+      "runAsAccount": null,
+      "operator": "notConfigured",
+      "operationType": "notConfigured",
+      "comparisonValue": null
+    }
+  ],
+  "dependentAppCount": 0,
+  "allowedArchitectures": "x86,x64,arm64",
+  "applicableArchitectures": "none",
+  "detectionRules": [
+    {
+      "runAs32Bit": false,
+      "scriptContent": "IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09DQojIEFwcGxpY2F0aW9uIDogQ01UcmFjZQ0KIyBQdXJwb3NlICAgICA6IERldGVjdGlvbiBTY3JpcHQNCiMgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQ0KDQokRGVzdGluYXRpb24gPSAiJGVudjpQcm9ncmFtRmlsZXNcQ01UcmFjZS5leGUiDQoNCmlmIChUZXN0LVBhdGggJERlc3RpbmF0aW9uKQ0Kew0KICAgIFdyaXRlLU91dHB1dCAiSW5zdGFsbGVkIg0KICAgIGV4aXQgMA0KfQ0KDQpleGl0IDE=",
+      "@odata.type": "#microsoft.graph.win32LobAppPowerShellScriptDetection",
+      "enforceSignatureCheck": false
+    }
+  ],
+  "id": "25df14c9-0b23-4a87-a207-2062052ac1b2",
+  "allowAvailableUninstall": false,
+  "developer": "MSFT",
+  "publisher": "Microsoft",
+  "msiInformation": null,
+  "notes": "",
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceAppManagement/mobileApps/$entity",
+  "installCommandLine": "powershell.exe -ExecutionPolicy Bypass -File Install.ps1",
+  "@odata.type": "#microsoft.graph.win32LobApp",
+  "largeIcon": null,
+  "minimumNumberOfProcessors": null,
+  "createdDateTime": "2026-07-09T11:05:22.9332951Z",
+  "supersedingAppCount": 0,
+  "isAssigned": false,
+  "supersededAppCount": 0,
+  "description": "See Logging",
+  "setupFilePath": "CMTrace.exe",
+  "displayName": "CMTrace",
+  "activeInstallScript": null,
+  "returnCodes": [
+    {
+      "type": "success",
+      "returnCode": 0
+    },
+    {
+      "type": "success",
+      "returnCode": 1707
+    },
+    {
+      "type": "softReboot",
+      "returnCode": 3010
+    },
+    {
+      "type": "hardReboot",
+      "returnCode": 1641
+    },
+    {
+      "type": "retry",
+      "returnCode": 1618
+    }
+  ],
+  "installExperience": {
+    "runAsAccount": "system",
+    "maxRunTimeInMinutes": 60,
+    "inUseBehavior": null,
+    "deviceRestartBehavior": "suppress"
+  },
+  "minimumMemoryInMB": null,
+  "owner": "Marquis",
+  "fileName": "IntunePackage.intunewin",
+  "requirementRules": [],
+  "uninstallCommandLine": "powershell.exe -ExecutionPolicy Bypass -File Uninstall.ps1",
+  "uploadState": 1,
+  "displayVersion": "1.0.0",
+  "informationUrl": null,
+  "minimumCpuSpeedInMHz": null,
+  "committedContentVersion": "1",
+  "isFeatured": false,
+  "lastModifiedDateTime": "2026-07-09T11:05:22.9332951Z",
+  "privacyInformationUrl": ""
+}

@@ -30,7 +30,7 @@ $App = Get-Content $Manifest -Raw | ConvertFrom-Json
 
 $SourceFolder  = Join-Path $ApplicationFolder $App.Source.SourceFolder
 $PackageFolder = Join-Path $ApplicationFolder $App.Source.PackageFolder
-$SetupFile     = Join-Path $ApplicationFolder $App.Source.SetupFile
+$SetupFile = Join-Path $SourceFolder $App.Source.SetupFile
 
 Write-Host "Validating application structure..."
 
@@ -76,12 +76,26 @@ if (!(Test-Path $IntuneWinAppUtil))
 # Package the application
 # Build Package
 
-$OutputFile = Join-Path $PackageFolder "Install.intunewin"
+$OutputFile = Get-ChildItem $PackageFolder -Filter *.intunewin |
+    Select-Object -First 1
+
+if (-not $OutputFile)
+{
+    throw "Package creation failed."
+}
+
+Write-Host ""
+Write-Host "Package created successfully!" -ForegroundColor Green
+Write-Host "Output: $($OutputFile.FullName)"
 
 Write-Host ""
 Write-Host "Packaging application..."
 Write-Host ""
-
+Write-Host "Source Folder : $SourceFolder"
+Write-Host "Setup File    : $($App.Source.SetupFile)"
+Write-Host "Output Folder : $PackageFolder"
+Write-Host "Full Setup    : $SetupFile"
+Write-Host ""
 & $IntuneWinAppUtil `
     -c $SourceFolder `
     -s $App.Source.SetupFile `
