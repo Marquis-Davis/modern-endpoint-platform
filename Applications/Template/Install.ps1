@@ -8,7 +8,7 @@ $Installer = Join-Path $PSScriptRoot ("Source\" + $Manifest.Source.SetupFile)
 
 if (!(Test-Path $Installer))
 {
-    throw "Installer not found: $Installer"
+    throw "The installer not found: $Installer"
 }
 
 Write-Host "Installing $($Manifest.Application.Name)..."
