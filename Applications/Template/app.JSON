@@ -3,46 +3,118 @@
     "Name": "",
     "Publisher": "",
     "Version": "1.0.0",
-    "Category": "",
     "Description": "",
     "Developer": "",
-    "Owner": ""
+    "Owner": "",
+
+    "informationUrl": "",
+    "privacyInformationUrl": "",
+    "Notes": "",
+    "isFeatured": false,
+
+    "Logo": "",
+    "LogoFolder": "Logo"
   },
 
   "Source": {
-    "InstallerFile": "",
-    "PackageFolder": "Package",
-    "SourceFolder": "Source"
+    "SetupFile": "",
+    "SourceFolder": "Source",
+    "PackageFolder": "Package"
   },
 
   "Install": {
     "Command": "powershell.exe -ExecutionPolicy Bypass -File Install.ps1",
     "Arguments": "",
-    "Context": "System",
-    "RestartBehavior": "Suppress",
-    "TimeoutMinutes": 60
+
+    "installExperience": {
+      "runAsAccount": "System",
+      "deviceRestartBehavior": "Suppress",
+      "maxRunTimeInMinutes": 60
+    },
+
+    "allowAvailableUninstall": false
   },
 
   "Uninstall": {
     "Command": "powershell.exe -ExecutionPolicy Bypass -File Uninstall.ps1",
-    "UninstallerFile": "",
     "Arguments": ""
   },
 
   "Detection": {
     "Type": "PowerShell",
-    "Script": "Detection.ps1",
-    "RunAs32Bit": false,
-    "EnforceSignatureCheck": false
+
+    "PowerShell": {
+      "Script": "Detection.ps1",
+      "RunAs32Bit": false,
+      "EnforceSignatureCheck": false
+    },
+
+    "MSI": {},
+
+    "File": {},
+
+    "Registry": {}
   },
 
   "Requirements": {
     "Architecture": "AllWithARM64",
-    "MinimumSupportedWindowsRelease": "W11_22H2"
+    "MinimumSupportedWindowsRelease": "W11_22H2",
+
+    "MinimumDiskSpaceMB": null,
+    "MinimumMemoryMB": null,
+    "MinimumCpuSpeedMHz": null,
+    "MinimumLogicalProcessors": null,
+
+    "AdditionalRequirements": []
   },
 
-  "Deployment": {
-    "Ring": "Pilot",
-    "Intent": "Required"
+  "ReturnCodes": [
+    {
+      "Code": 0,
+      "Type": "Success"
+    },
+    {
+      "Code": 1707,
+      "Type": "Success"
+    },
+    {
+      "Code": 3010,
+      "Type": "SoftReboot"
+    },
+    {
+      "Code": 1641,
+      "Type": "HardReboot"
+    },
+    {
+      "Code": 1618,
+      "Type": "Retry"
+    }
+  ],
+
+  "Categories": [],
+
+  "Assignments": [
+    {
+      "Intent": "Required",
+      "Ring": "Pilot",
+      "Group": "",
+      "Notifications": "showAll",
+
+      "Filter": "",
+      "FilterMode": "None"
+    }
+  ],
+
+  "ScopeTags": [
+    "Default"
+  ],
+
+  "Dependencies": [],
+
+  "Supersedence": [],
+
+  "Metadata": {
+    "Author": "",
+    "RepositoryVersion": "1.0"
   }
 }

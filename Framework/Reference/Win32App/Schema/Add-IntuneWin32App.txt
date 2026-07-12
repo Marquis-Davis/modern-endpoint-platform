@@ -1,0 +1,359 @@
+
+NAME
+    Add-IntuneWin32App
+    
+SYNOPSIS
+    Create a new Win32 application in Microsoft Intune.
+    
+    
+SYNTAX
+    Add-IntuneWin32App -FilePath <String> -DisplayName <String> -Description <String> -Publisher <String> [-AppVersion <String>] [-Developer <String>] [-Owner <String>] [-Notes <String>] [-InformationURL <String>] [-PrivacyURL <String>] [-CompanyPortalFeaturedApp <Boolean>] [-CategoryName <String[]>] -InstallExperience <String> -RestartBehavior <String> [-MaximumInstallationTimeInMinutes <Int32>] [-AllowAvailableUninstall] -DetectionRule <OrderedDictionary[]> [-RequirementRule <OrderedDictionary>] [-AdditionalRequirementRule <OrderedDictionary[]>] [-ReturnCode <Hashtable[]>] [-Icon <String>] [-ScopeTagName <String[]>] [-UseAzCopy] [-AzCopyWindowStyle <String>] [-UnattendedInstall] [-UnattendedUninstall] [-WhatIf] [-Confirm] [<CommonParameters>]
+    
+    Add-IntuneWin32App -FilePath <String> -DisplayName <String> -Description <String> -Publisher <String> [-AppVersion <String>] [-Developer <String>] [-Owner <String>] [-Notes <String>] [-InformationURL <String>] [-PrivacyURL <String>] [-CompanyPortalFeaturedApp <Boolean>] [-CategoryName <String[]>] -InstallCommandLine <String> -UninstallCommandLine <String> -InstallExperience <String> -RestartBehavior <String> [-MaximumInstallationTimeInMinutes <Int32>] [-AllowAvailableUninstall] -DetectionRule <OrderedDictionary[]> [-RequirementRule <OrderedDictionary>] [-AdditionalRequirementRule <OrderedDictionary[]>] [-ReturnCode <Hashtable[]>] [-Icon <String>] [-ScopeTagName <String[]>] [-UseAzCopy] [-AzCopyWindowStyle <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Create a new Win32 application in Microsoft Intune.
+    
+
+PARAMETERS
+    -FilePath <String>
+        Specify a local path to where the win32 app .intunewin file is located.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -DisplayName <String>
+        Specify a display name for the Win32 application.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Description <String>
+        Specify a description for the Win32 application.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Publisher <String>
+        Specify a publisher name for the Win32 application.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -AppVersion <String>
+        Specify the app version for the Win32 application.
+        
+        Required?                    false
+        Position?                    named
+        Default value                [string]::Empty
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Developer <String>
+        Specify the developer name for the Win32 application.
+        
+        Required?                    false
+        Position?                    named
+        Default value                [string]::Empty
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Owner <String>
+        Specify the owner property for the Win32 application.
+        
+        Required?                    false
+        Position?                    named
+        Default value                [string]::Empty
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Notes <String>
+        Specify the notes property for the Win32 application.
+        
+        Required?                    false
+        Position?                    named
+        Default value                [string]::Empty
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -InformationURL <String>
+        Specify the information URL for the Win32 application.
+        
+        Required?                    false
+        Position?                    named
+        Default value                [string]::Empty
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -PrivacyURL <String>
+        Specify the privacy URL for the Win32 application.
+        
+        Required?                    false
+        Position?                    named
+        Default value                [string]::Empty
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -CompanyPortalFeaturedApp <Boolean>
+        Specify whether to have the Win32 application featured in Company Portal or not.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -CategoryName <String[]>
+        Specify the name of either a single or an array of category names for the Win32 application.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -InstallCommandLine <String>
+        Specify the install command line for the Win32 application.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -UninstallCommandLine <String>
+        Specify the uninstall command line for the Win32 application.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -InstallExperience <String>
+        Specify the install experience for the Win32 application. Supported values are: system or user.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -RestartBehavior <String>
+        Specify the restart behavior for the Win32 application. Supported values are: allow, basedOnReturnCode, suppress or force.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -MaximumInstallationTimeInMinutes <Int32>
+        Specify the maximum installation time in minutes for the Win32 application (default is 60 minutes).
+        
+        Required?                    false
+        Position?                    named
+        Default value                60
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -AllowAvailableUninstall [<SwitchParameter>]
+        Specify whether to allow the Win32 application to be uninstalled from the Company Portal app when assigned as available.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -DetectionRule <OrderedDictionary[]>
+        Provide an array of a single or multiple OrderedDictionary objects as detection rules that will be used for the Win32 application.
+        
+        Required?                    true
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -RequirementRule <OrderedDictionary>
+        Provide an OrderedDictionary object as requirement rule that will be used for the Win32 application.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -AdditionalRequirementRule <OrderedDictionary[]>
+        Provide an array of OrderedDictionary objects as additional requirement rule, e.g. for file, registry or script rules, that will be used for the Win32 application.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -ReturnCode <Hashtable[]>
+        Provide an array of a single or multiple hash-tables for the Win32 application with return code information.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Icon <String>
+        Provide a Base64 encoded string of the PNG/JPG/JPEG file.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -ScopeTagName <String[]>
+        Specify the name of either a single or an array of Scope Tag names to be set instead of the Default tag.
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -UseAzCopy [<SwitchParameter>]
+        Specify the UseAzCopy parameter switch when adding an application with source files larger than 500MB.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -AzCopyWindowStyle <String>
+        Specify whether the AzCopy content transfer progress should use -WindowStyle Hidden or -NoNewWindow parameters for Start-Process. NoNewWindow will show transfer output, Hidden will not show progress but will support multi-threaded jobs.
+        
+        Required?                    false
+        Position?                    named
+        Default value                NoNewWindow
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -UnattendedInstall [<SwitchParameter>]
+        Specify to enforce the MSI installer to run silently, with /quiet added to the install command line of the Win32 application.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -UnattendedUninstall [<SwitchParameter>]
+        Specify to enforce the MSI installer to run silently, with /quiet added to the uninstall command line of the Win32 application.
+        
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -WhatIf [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    -Confirm [<SwitchParameter>]
+        
+        Required?                    false
+        Position?                    named
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+INPUTS
+    
+OUTPUTS
+    
+NOTES
+    
+    
+        Author:      Nickolaj Andersen
+        Contact:     @NickolajA
+        Created:     2020-01-04
+        Updated:     2023-09-02
+        
+        Version history:
+        1.0.0 - (2020-01-04) Function created
+        1.0.1 - (2020-01-27) Added support for RequirementRule parameter input
+        1.0.2 - (2020-09-20) Added support for Owner, Notes, InformationURL, PrivacyURL and CompanyPortalFeaturedApp parameter inputs
+        1.0.3 - (2021-04-01) Removed unused comments
+        1.0.4 - (2021-04-01) Updated token expired message to a warning instead of verbose output
+        1.0.5 - (2021-08-31) Updated to use new authentication header
+        1.0.6 - (2021-08-31) Added AppVersion optional parameter
+        1.0.7 - (2022-09-02) Removed break command that would prevent the Win32 app body JSON output from being display in case an error occured
+        1.0.8 - (2022-10-02) Added UseAzCopy parameter switch to override the native transfer method. Specify the UseAzCopy parameter switch when uploading large applications.
+                             Added fallback removal code for the cleanup operation at the end of this function, since OneDrive's Files On Demand feature sometimes blocks the
+                             expanded .intunewin file cleanup process.
+        1.0.9 - (2023-01-20) Added parameter AzCopyWindowStyle and ScopeTagName. Updated regex pattern for .intunewin file and parameter FilePath.
+                             Added support for specifying Scope Tags when creating the Win 32 app, using the ScopeTagName parameter. Added UnattendedInstall and
+                             UnattendedUninstall parameters for MSI parameter set, to automatically add /quiet to the respectively generated command line.
+                             Added CategoryName parameter. UseAzCopy parameter will now only be allowed if content size is 100MB or more.
+        1.1.0 - (2023-03-17) Added parameter switch AllowAvailableUninstall. Fixed issue #77 related to scope tags and custom roles.
+        1.1.1 - (2023-09-02) Added parameter MaximumInstallationTimeInMinutes. Updated with Test-AccessToken function.
+        1.1.2 - (2024-12-19) Added logic to make Expand folder unique to avoid file access conflicts. (tjgruber)
+    
+    
+RELATED LINKS
+
+

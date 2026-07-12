@@ -1,0 +1,42 @@
+{
+  "Application": {
+    "Name": "ZoomIt",
+    "Publisher": "",
+    "Version": "1.0.0",
+    "Category": "",
+    "Description": "",
+    "Developer": "",
+    "Owner": ""
+  },
+"Source": {
+    "SetupFile": "ZoomIt64.exe",
+    "PackageFolder": "Package",
+    "SourceFolder": "Source"
+},
+  "Install": {
+    "Command": "powershell.exe -ExecutionPolicy Bypass -File Install.ps1",
+    "Arguments": "",
+    "Context": "System",
+    "RestartBehavior": "Suppress",
+    "TimeoutMinutes": 60
+  },
+  "Uninstall": {
+    "Command": "powershell.exe -ExecutionPolicy Bypass -File Uninstall.ps1",
+    "UninstallerFile": "",
+    "Arguments": ""
+  },
+  "Detection": {
+    "Type": "PowerShell",
+    "Script": "Detection.ps1",
+    "RunAs32Bit": false,
+    "EnforceSignatureCheck": false
+  },
+  "Requirements": {
+    "Architecture": "AllWithARM64",
+    "MinimumSupportedWindowsRelease": "W11_22H2"
+  },
+  "Deployment": {
+    "Ring": "Pilot",
+    "Intent": "Required"
+  }
+}
