@@ -10,7 +10,10 @@ function Publish-Win32App {
         [string]$ApplicationFolder,
 
         [Parameter(Mandatory)]
-        [string]$Package
+        [string]$Package,
+
+        [Parameter()]
+        $DeploymentGroup
     )
 
     #============================================================
@@ -20,16 +23,13 @@ function Publish-Win32App {
     Write-Host ""
     Write-Host "Creating Detection Rule..." -ForegroundColor Yellow
 
-    switch ($Manifest.Detection.Type)
-    {
-        "PowerShell"
-        {
+    switch ($Manifest.Detection.Type) {
+        "PowerShell" {
             $DetectionScript = Join-Path `
                 $ApplicationFolder `
                 $Manifest.Detection.PowerShell.Script
 
-            if (!(Test-Path $DetectionScript))
-            {
+            if (!(Test-Path $DetectionScript)) {
                 throw "Detection script not found: $DetectionScript"
             }
 
@@ -39,8 +39,7 @@ function Publish-Win32App {
                 -RunAs32Bit $Manifest.Detection.PowerShell.RunAs32Bit
         }
 
-        default
-        {
+        default {
             throw "Detection type '$($Manifest.Detection.Type)' is not supported."
         }
     }
@@ -56,28 +55,24 @@ function Publish-Win32App {
         MinimumSupportedWindowsRelease = $Manifest.Requirements.MinimumSupportedWindowsRelease
     }
 
-    if ($null -ne $Manifest.Requirements.MinimumDiskSpaceMB)
-    {
+    if ($null -ne $Manifest.Requirements.MinimumDiskSpaceMB) {
         $RequirementParams.MinimumFreeDiskSpaceInMB =
-            $Manifest.Requirements.MinimumDiskSpaceMB
+        $Manifest.Requirements.MinimumDiskSpaceMB
     }
 
-    if ($null -ne $Manifest.Requirements.MinimumMemoryMB)
-    {
+    if ($null -ne $Manifest.Requirements.MinimumMemoryMB) {
         $RequirementParams.MinimumMemoryInMB =
-            $Manifest.Requirements.MinimumMemoryMB
+        $Manifest.Requirements.MinimumMemoryMB
     }
 
-    if ($null -ne $Manifest.Requirements.MinimumCpuSpeedMHz)
-    {
+    if ($null -ne $Manifest.Requirements.MinimumCpuSpeedMHz) {
         $RequirementParams.MinimumCpuSpeedInMHz =
-            $Manifest.Requirements.MinimumCpuSpeedMHz
+        $Manifest.Requirements.MinimumCpuSpeedMHz
     }
 
-    if ($null -ne $Manifest.Requirements.MinimumLogicalProcessors)
-    {
+    if ($null -ne $Manifest.Requirements.MinimumLogicalProcessors) {
         $RequirementParams.MinimumLogicalProcessorCount =
-            $Manifest.Requirements.MinimumLogicalProcessors
+        $Manifest.Requirements.MinimumLogicalProcessors
     }
 
     $RequirementRule = New-IntuneWin32AppRequirementRule @RequirementParams
@@ -88,8 +83,7 @@ function Publish-Win32App {
 
     $InstallCommand = $Manifest.Install.Command
 
-    if (![string]::IsNullOrWhiteSpace($Manifest.Install.Arguments))
-    {
+    if (![string]::IsNullOrWhiteSpace($Manifest.Install.Arguments)) {
         $InstallCommand += " $($Manifest.Install.Arguments)"
     }
 
@@ -99,8 +93,7 @@ function Publish-Win32App {
 
     $UninstallCommand = $Manifest.Uninstall.Command
 
-    if (![string]::IsNullOrWhiteSpace($Manifest.Uninstall.Arguments))
-    {
+    if (![string]::IsNullOrWhiteSpace($Manifest.Uninstall.Arguments)) {
         $UninstallCommand += " $($Manifest.Uninstall.Arguments)"
     }
 
@@ -125,8 +118,7 @@ function Publish-Win32App {
 
     Write-Host "Creating Win32 Application..." -ForegroundColor Yellow
 
-    try
-    {
+    try {
         $Win32App = Add-IntuneWin32App `
             -FilePath $Package `
             -DisplayName $Manifest.Application.Name `
@@ -149,8 +141,7 @@ function Publish-Win32App {
 
         return $Win32App
     }
-    catch
-    {
+    catch {
         Write-Host ""
         Write-Host "Failed to create Win32 Application." -ForegroundColor Red
         throw
