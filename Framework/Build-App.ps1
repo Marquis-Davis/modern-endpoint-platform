@@ -13,7 +13,7 @@ Write-Host ""
 
 # Repository
 
-$RepositoryRoot   = Split-Path $PSScriptRoot -Parent
+$RepositoryRoot    = Split-Path $PSScriptRoot -Parent
 $ApplicationFolder = Join-Path $RepositoryRoot "Applications\$Application"
 $Manifest          = Join-Path $ApplicationFolder "app.json"
 
@@ -30,7 +30,7 @@ $App = Get-Content $Manifest -Raw | ConvertFrom-Json
 
 $SourceFolder  = Join-Path $ApplicationFolder $App.Source.SourceFolder
 $PackageFolder = Join-Path $ApplicationFolder $App.Source.PackageFolder
-$SetupFile = Join-Path $SourceFolder $App.Source.SetupFile
+$SetupFile     = Join-Path $SourceFolder $App.Source.SetupFile
 
 Write-Host "Validating application structure..."
 
@@ -60,12 +60,12 @@ Write-Host "Application : $($App.Application.Name)"
 Write-Host "Publisher   : $($App.Application.Publisher)"
 Write-Host "Version     : $($App.Application.Version)"
 Write-Host "Category    : $($App.Application.Category)"
-Write-Host "Intent      : $($App.Deployment.Intent)"
-Write-Host "Group       : $($App.Deployment.AssignmentGroup)"
+Write-Host "Intent      : $($App.Assignments[0].Intent)"
+Write-Host "Group       : $($App.Assignments[0].Group)"
 
 # Locate Tools
 
-$ToolsFolder = Join-Path $RepositoryRoot "Tools\Microsoft-Win32-Content-Prep-Tool-master"
+$ToolsFolder      = Join-Path $RepositoryRoot "Tools\Microsoft-Win32-Content-Prep-Tool-master"
 $IntuneWinAppUtil = Join-Path $ToolsFolder "IntuneWinAppUtil.exe"
 
 if (!(Test-Path $IntuneWinAppUtil))
@@ -73,20 +73,12 @@ if (!(Test-Path $IntuneWinAppUtil))
     throw "Unable to locate IntuneWinAppUtil.exe"
 }
 
-# Package the application
+# Remove any previous package
+
+Get-ChildItem $PackageFolder -Filter *.intunewin -ErrorAction SilentlyContinue |
+    Remove-Item -Force
+
 # Build Package
-
-$OutputFile = Get-ChildItem $PackageFolder -Filter *.intunewin |
-    Select-Object -First 1
-
-if (-not $OutputFile)
-{
-    throw "Package creation failed."
-}
-
-Write-Host ""
-Write-Host "Package created successfully!" -ForegroundColor Green
-Write-Host "Output: $($OutputFile.FullName)"
 
 Write-Host ""
 Write-Host "Packaging application..."
@@ -96,19 +88,29 @@ Write-Host "Setup File    : $($App.Source.SetupFile)"
 Write-Host "Output Folder : $PackageFolder"
 Write-Host "Full Setup    : $SetupFile"
 Write-Host ""
+
 & $IntuneWinAppUtil `
     -c $SourceFolder `
     -s $App.Source.SetupFile `
     -o $PackageFolder `
     -q
 
-    # Verify 
-    if (!(Test-Path $OutputFile))
+if ($LASTEXITCODE -ne 0)
 {
-    throw "Package creation failed."
+    throw "IntuneWinAppUtil failed with exit code $LASTEXITCODE."
+}
+
+# Verify Package
+
+$OutputFile = Get-ChildItem $PackageFolder -Filter *.intunewin |
+    Select-Object -First 1
+
+if (-not $OutputFile)
+{
+    throw "Package creation failed. No .intunewin file was found in '$PackageFolder'."
 }
 
 Write-Host ""
-Write-Host "Package created successfully!"
-Write-Host "Output: $OutputFile"
+Write-Host "Package created successfully!" -ForegroundColor Green
+Write-Host "Output : $($OutputFile.FullName)"
 Write-Host ""
