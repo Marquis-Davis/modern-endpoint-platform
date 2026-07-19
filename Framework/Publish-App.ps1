@@ -11,7 +11,21 @@ Import-Module Microsoft.Graph.Authentication -ErrorAction Stop
 Import-Module Microsoft.Graph.Groups -ErrorAction Stop
 Import-Module IntuneWin32App -ErrorAction Stop
 
-. "$PSScriptRoot\Modules\Publish-Win32App.ps1"
+$PublishModule = Join-Path $PSScriptRoot "Modules\Publish-Win32App.ps1"
+
+Write-Host "Loading module: $PublishModule" -ForegroundColor Cyan
+
+if (-not (Test-Path $PublishModule)) {
+    throw "Module not found: $PublishModule"
+}
+
+. $PublishModule
+
+if (-not (Get-Command Publish-Win32App -ErrorAction SilentlyContinue)) {
+    throw "Publish-Win32App failed to load."
+}
+
+Write-Host "Publish-Win32App loaded successfully." -ForegroundColor Green
 
 Clear-Host
 

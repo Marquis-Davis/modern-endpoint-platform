@@ -118,6 +118,8 @@ function Publish-Win32App {
 
     Write-Host "Creating Win32 Application..." -ForegroundColor Yellow
 
+    $Win32App = $null
+
     try {
         $Win32App = Add-IntuneWin32App `
             -FilePath $Package `
@@ -137,6 +139,33 @@ function Publish-Win32App {
         Write-Host ""
         Write-Host "Win32 Application Created Successfully." -ForegroundColor Green
         Write-Host "Application ID : $($Win32App.Id)"
+        Write-Host ""
+
+        Write-Host "Assigning application..." -ForegroundColor Yellow
+
+        try {
+            Add-IntuneWin32AppAssignmentGroup `
+                -Include `
+                -ID $Win32App.Id `
+                -GroupID $DeploymentGroup.Id `
+                -Intent "required"
+
+            Write-Host "Application assigned successfully." -ForegroundColor Green
+        }
+        catch {
+            Write-Warning "Assignment failed. Rolling back application..."
+
+            Remove-IntuneWin32App `
+                -ID $Win32App.Id `
+                -Confirm:$false
+
+            Write-Host "Application removed." -ForegroundColor Green
+
+            throw
+        }
+
+        Write-Host ""
+        Write-Host "Publish completed successfully." -ForegroundColor Green
         Write-Host ""
 
         return $Win32App
