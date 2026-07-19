@@ -144,11 +144,19 @@ function Publish-Win32App {
         Write-Host "Assigning application..." -ForegroundColor Yellow
 
         try {
+            $Intent = $Manifest.Assignments[0].Intent
+
+            if ([string]::IsNullOrWhiteSpace($Intent)) {
+                throw "Assignment intent is missing from the manifest."
+            }
+
+            $Intent = $Intent.ToLower()
+
             Add-IntuneWin32AppAssignmentGroup `
                 -Include `
                 -ID $Win32App.Id `
                 -GroupID $DeploymentGroup.Id `
-                -Intent "required"
+                -Intent $Intent
 
             Write-Host "Application assigned successfully." -ForegroundColor Green
         }

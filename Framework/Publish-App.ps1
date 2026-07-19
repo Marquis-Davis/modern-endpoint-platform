@@ -81,14 +81,22 @@ if (!(Test-Path $Package))
 
 $App = Get-Content $Manifest -Raw | ConvertFrom-Json
 
+$Intent = $App.Assignments[0].Intent
+
+if ([string]::IsNullOrWhiteSpace($Intent)) {
+    throw "Assignment intent is missing from app.json."
+}
+
+$Intent = $Intent.Trim().ToLower()
+
 # Automatically generate deployment group name
-$GroupName = "APP-$($App.Application.Name)-$($App.Deployment.Intent)"
+$GroupName = "APP-$($App.Application.Name)-$Intent"
 
 Write-Host "Application : $($App.Application.Name)"
 Write-Host "Publisher   : $($App.Application.Publisher)"
 Write-Host "Version     : $($App.Application.Version)"
 Write-Host "Category    : $($App.Application.Category)"
-Write-Host "Intent      : $($App.Deployment.Intent)"
+Write-Host "Intent      : $Intent"
 Write-Host "Group       : $GroupName"
 Write-Host ""
 
