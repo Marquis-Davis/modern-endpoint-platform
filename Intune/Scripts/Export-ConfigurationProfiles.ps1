@@ -50,6 +50,6 @@ foreach ($Profile in $Profiles) {
 }
 
 Write-Host ""
-Write-Host "Export complete." -ForegroundColor Cyan
+Write-Host "Export completed." -ForegroundColor Cyan
 Write-Host "Location: $ExportPath"
 Write-Host "Profiles exported: $($Profiles.Count)"
