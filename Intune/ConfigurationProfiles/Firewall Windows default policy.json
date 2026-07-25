@@ -1,0 +1,21 @@
+{
+  "creationSource": "MdeDeviceConfigurationPolicies",
+  "technologies": "mdm,microsoftSense",
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "templateReference": {
+    "templateDisplayName": "Windows Firewall",
+    "templateFamily": "endpointSecurityFirewall",
+    "templateDisplayVersion": "Version 1",
+    "templateId": "6078910e-d808-4a9f-a51d-1b8a7bacb7c0_1"
+  },
+  "priorityMetaData": null,
+  "createdDateTime": "2026-07-07T15:06:26.618085Z",
+  "id": "ef8750db-a806-4e01-9245-fd6e1f44e64c",
+  "platforms": "windows10",
+  "description": "Default policy sets settings for all endpoints that are not governed by any other policy, ensuring that all your clients are managed as soon as MDE is deployed. The default policy is based on a set of pre-configured recommended settings and can be adjusted by user with admin priviledges.",
+  "lastModifiedDateTime": "2026-07-07T15:06:26.618085Z",
+  "settingCount": 3,
+  "name": "Firewall Windows default policy"
+}
