@@ -1,15 +1,39 @@
 #Requires -RunAsAdministrator
 
-$Root = Split-Path $PSScriptRoot -Parent
+<#
+.SYNOPSIS
+    Initializes the Intune Configuration-as-Code repository structure.
 
-if (-not $Root) {
-    throw "This script must be saved as Initialize-Repository.ps1 before it can be run."
+.DESCRIPTION
+    Creates the standard folder structure and placeholder files required
+    for the Intune Configuration-as-Code project.
+
+.NOTES
+    Version : 1.0.0
+    Author  : Marquis Davis
+#>
+
+Set-StrictMode -Version Latest
+$ErrorActionPreference = 'Stop'
+
+# Repository Root
+$Root = Split-Path -Parent $PSScriptRoot
+
+if ([string]::IsNullOrWhiteSpace($Root)) {
+    throw "Unable to determine repository root."
 }
 
 Write-Host ""
-Write-Host "Repository Root: $Root" -ForegroundColor Cyan
-Write-Host "Creating repository structure..." -ForegroundColor Cyan
+Write-Host "==========================================" -ForegroundColor Cyan
+Write-Host " Intune Configuration-as-Code Bootstrap" -ForegroundColor Cyan
+Write-Host "==========================================" -ForegroundColor Cyan
 Write-Host ""
+Write-Host "Repository Root : $Root" -ForegroundColor Yellow
+Write-Host ""
+
+#------------------------------------------------------------
+# Folder Structure
+#------------------------------------------------------------
 
 $Folders = @(
     "Applications",
@@ -33,18 +57,9 @@ $Folders = @(
     "Templates"
 )
 
-foreach ($Folder in $Folders) {
-
-    $Path = Join-Path -Path $Root -ChildPath $Folder
-
-    if (-not (Test-Path $Path)) {
-        New-Item -ItemType Directory -Path $Path -Force | Out-Null
-        Write-Host "[+] Created $Folder" -ForegroundColor Green
-    }
-    else {
-        Write-Host "[=] Exists  $Folder" -ForegroundColor DarkGray
-    }
-}
+#------------------------------------------------------------
+# Files
+#------------------------------------------------------------
 
 $Files = @(
     ".gitignore",
@@ -53,18 +68,54 @@ $Files = @(
     "Import\Import-Intune.ps1"
 )
 
-foreach ($File in $Files) {
+#------------------------------------------------------------
+# Create Folders
+#------------------------------------------------------------
 
-    $Path = Join-Path -Path $Root -ChildPath $File
+Write-Host "Creating folders..." -ForegroundColor Cyan
+Write-Host ""
 
-    if (-not (Test-Path $Path)) {
-        New-Item -ItemType File -Path $Path -Force | Out-Null
-        Write-Host "[+] Created $File" -ForegroundColor Yellow
+foreach ($Folder in $Folders)
+{
+    $Path = Join-Path -Path $Root -ChildPath $Folder
+
+    if (Test-Path -LiteralPath $Path)
+    {
+        Write-Host "[=] Exists   $Folder" -ForegroundColor DarkGray
     }
-    else {
-        Write-Host "[=] Exists  $File" -ForegroundColor DarkGray
+    else
+    {
+        New-Item -ItemType Directory -Path $Path -Force | Out-Null
+        Write-Host "[+] Created  $Folder" -ForegroundColor Green
     }
 }
 
 Write-Host ""
-Write-Host "Repository initialized successfully." -ForegroundColor Green
+
+#------------------------------------------------------------
+# Create Files
+#------------------------------------------------------------
+
+Write-Host "Creating files..." -ForegroundColor Cyan
+Write-Host ""
+
+foreach ($File in $Files)
+{
+    $Path = Join-Path -Path $Root -ChildPath $File
+
+    if (Test-Path -LiteralPath $Path)
+    {
+        Write-Host "[=] Exists   $File" -ForegroundColor DarkGray
+    }
+    else
+    {
+        New-Item -ItemType File -Path $Path -Force | Out-Null
+        Write-Host "[+] Created  $File" -ForegroundColor Yellow
+    }
+}
+
+Write-Host ""
+Write-Host "==========================================" -ForegroundColor Green
+Write-Host " Repository initialization complete." -ForegroundColor Green
+Write-Host "==========================================" -ForegroundColor Green
+Write-Host ""
