@@ -75,6 +75,10 @@ if (Get-Command Export-ConfigurationProfiles -ErrorAction SilentlyContinue) {
     Export-ConfigurationProfiles -RepositoryRoot $RepositoryRoot
 }
 
+if (Get-Command Export-UpdateRings -ErrorAction SilentlyContinue) {
+    Export-UpdateRings -RepositoryRoot $RepositoryRoot
+}
+
 Write-Host ""
 Write-Host "==========================================" -ForegroundColor Green
 Write-Host " Export Complete" -ForegroundColor Green
