@@ -37,7 +37,9 @@ $Scopes = @(
     "DeviceManagementManagedDevices.Read.All",
     "DeviceManagementServiceConfig.ReadWrite.All",
     "Group.Read.All",
-    "Policy.Read.All"
+    "Policy.Read.All",
+    "DeviceManagementScripts.Read.All",
+    "DeviceManagementManagedDevices.ReadWrite.All"
 )
 
 Write-Host "Connecting..." -ForegroundColor Cyan

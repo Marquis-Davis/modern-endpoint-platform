@@ -1,0 +1,21 @@
+{
+  "creationSource": null,
+  "templateReference": {
+    "templateId": "0385b795-0f2f-44ac-8602-9f65bf6adede_1",
+    "templateFamily": "endpointSecurityEndpointDetectionAndResponse",
+    "templateDisplayVersion": "Version 1",
+    "templateDisplayName": "Endpoint detection and response"
+  },
+  "lastModifiedDateTime": "2026-07-07T15:06:24.4609562Z",
+  "settingCount": 1,
+  "description": "Default EDR policy for targeting all tenants devices, created by MDE.",
+  "priorityMetaData": null,
+  "createdDateTime": "2026-07-07T15:06:24.4609562Z",
+  "platforms": "windows10",
+  "technologies": "mdm,microsoftSense",
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "name": "Default EDR policy for all devices",
+  "id": "4796bd8f-c7de-4108-bb31-b3d8a2ea4c9b"
+}

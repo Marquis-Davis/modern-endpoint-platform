@@ -1,0 +1,20 @@
+{
+  "id": "ca2c573e-41b1-4732-a508-e9a49cc066a6",
+  "endOfSupportDate": "2028-10-10T00:00:00Z",
+  "rolloutSettings": {
+    "offerIntervalInDays": null,
+    "offerStartDateTimeInUTC": null,
+    "offerEndDateTimeInUTC": null
+  },
+  "lastModifiedDateTime": "2026-07-27T21:22:52.9771923Z",
+  "installFeatureUpdatesOptional": false,
+  "installLatestWindows10OnWindows11IneligibleDevice": false,
+  "description": "",
+  "createdDateTime": "2026-07-27T21:15:37.3380774Z",
+  "featureUpdateVersion": "Windows 11, version 25H2",
+  "deployableContentDisplayName": null,
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "displayName": "WUFB-FeatureUpdate-25H2-Pilot"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "71aa54ac-859e-4789-8200-8a3c293d7eaf",
+  "deploymentDeferralInDays": 7,
+  "approvalType": "automatic",
+  "lastModifiedDateTime": "2026-07-27T21:19:01.1589006Z",
+  "description": "",
+  "createdDateTime": "2026-07-27T21:19:01.1589006Z",
+  "inventorySyncStatus": null,
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "deviceReporting": 0,
+  "displayName": "WUfB - Driver Updates - Pilot",
+  "newUpdates": 0
+}
