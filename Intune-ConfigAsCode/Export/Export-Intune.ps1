@@ -95,6 +95,18 @@ if (Get-Command Export-CompliancePolicies -ErrorAction SilentlyContinue) {
     Export-CompliancePolicies -RepositoryRoot $RepositoryRoot
 }
 
+if (Get-Command Export-PowerShellScripts -ErrorAction SilentlyContinue) {
+    Export-PowerShellScripts -RepositoryRoot $RepositoryRoot
+}
+
+if (Get-Command Export-Remediations -ErrorAction SilentlyContinue) {
+    Export-Remediations -RepositoryRoot $RepositoryRoot
+}
+
+if (Get-Command Export-EndpointSecurity -ErrorAction SilentlyContinue) {
+    Export-EndpointSecurity -RepositoryRoot $RepositoryRoot
+}
+
 Write-Host ""
 Write-Host "==========================================" -ForegroundColor Green
 Write-Host " Export Complete" -ForegroundColor Green

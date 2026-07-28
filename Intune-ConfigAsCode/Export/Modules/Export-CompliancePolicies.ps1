@@ -1,4 +1,4 @@
-function Export-ConfigurationProfiles {
+function Export-CompliancePolicies {
 
     [CmdletBinding()]
     param(
@@ -6,23 +6,21 @@ function Export-ConfigurationProfiles {
         [string]$RepositoryRoot
     )
 
-    Write-Host "Exporting Configuration Profiles..." -ForegroundColor Cyan
+    Write-Host "Exporting Compliance Policies..." -ForegroundColor Cyan
 
-    $ExportPath = Join-Path $RepositoryRoot "ConfigurationProfiles"
+    $ExportPath = Join-Path $RepositoryRoot "CompliancePolicies"
+
+    if (-not (Test-Path $ExportPath)) {
+        New-Item -ItemType Directory -Path $ExportPath -Force | Out-Null
+    }
 
     $Response = Invoke-MgGraphRequest `
         -Method GET `
-        -Uri "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations"
-
-        #$Response.value | Select-Object displayName,'@odata.type' | Format-Table -AutoSize
+        -Uri "https://graph.microsoft.com/beta/deviceManagement/deviceCompliancePolicies"
 
     $Count = 0
 
-    $ConfigurationProfiles = $Response.value | Where-Object {
-    $_.'@odata.type' -ne "#microsoft.graph.windowsUpdateForBusinessConfiguration"
-}
-
-foreach ($Policy in $ConfigurationProfiles){
+    foreach ($Policy in $Response.value) {
 
         $Name = if ([string]::IsNullOrWhiteSpace($Policy.displayName)) {
             $Policy.id
@@ -31,14 +29,12 @@ foreach ($Policy in $ConfigurationProfiles){
             $Policy.displayName
         }
 
-        # Create a safe filename
         $SafeName = $Name -replace '[\\/:*?"<>|]', '_'
 
         # Remove Graph metadata
         $Policy.PSObject.Properties.Remove('@odata.context')
         $Policy.PSObject.Properties.Remove('@odata.type')
 
-        # Save JSON
         $Json = $Policy | ConvertTo-Json -Depth 100
 
         $File = Join-Path $ExportPath "$SafeName.json"
@@ -53,6 +49,6 @@ foreach ($Policy in $ConfigurationProfiles){
     }
 
     Write-Host ""
-    Write-Host "Exported $Count Configuration Profile(s)." -ForegroundColor Green
+    Write-Host "Exported $Count Compliance Policy(s)." -ForegroundColor Green
     Write-Host ""
 }
