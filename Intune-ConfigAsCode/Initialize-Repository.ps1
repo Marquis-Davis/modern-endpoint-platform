@@ -1,6 +1,6 @@
 #Requires -RunAsAdministrator
 
-$Root = $PSScriptRoot
+$Root = Split-Path $PSScriptRoot -Parent
 
 if (-not $Root) {
     throw "This script must be saved as Initialize-Repository.ps1 before it can be run."
