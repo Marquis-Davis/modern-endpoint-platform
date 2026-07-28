@@ -46,11 +46,11 @@ $RepositoryRoot = Split-Path -Parent $PSScriptRoot
 
 $ExportModules = Join-Path $PSScriptRoot "Modules"
 
-$ModuleFiles = Get-ChildItem `
+$ModuleFiles = @(Get-ChildItem `
     -Path $ExportModules `
     -Filter "*.ps1" `
     -ErrorAction SilentlyContinue |
-    Sort-Object Name
+    Sort-Object Name)
 
 if ($ModuleFiles.Count -eq 0) {
     Write-Warning "No export modules found."
