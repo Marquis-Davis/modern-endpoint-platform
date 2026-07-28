@@ -15,9 +15,6 @@
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-Set-StrictMode -Version Latest
-$ErrorActionPreference = 'Stop'
-
 $Stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
 
 Write-Host "==========================================" -ForegroundColor Cyan
@@ -45,19 +42,46 @@ Write-Host ""
 $RepositoryRoot = Split-Path -Parent $PSScriptRoot
 
 #------------------------------------------------------------
-# Load Export Modules
+# Load Modules
 #------------------------------------------------------------
 
-$ExportModules = Join-Path $PSScriptRoot "Modules"
+$ModulesRoot = Join-Path $PSScriptRoot "Modules"
+$CommonRoot  = Join-Path $ModulesRoot "Common"
 
-$ModuleFiles = @(Get-ChildItem `
-    -Path $ExportModules `
+#
+# Load Common helper modules first
+#
+if (Test-Path $CommonRoot) {
+
+    Get-ChildItem `
+        -Path $CommonRoot `
+        -Filter "*.ps1" `
+        -File |
+        Sort-Object Name |
+        ForEach-Object {
+
+            Write-Host "Loading Common\$($_.Name)..."
+
+            . $_.FullName
+        }
+
+    Write-Host ""
+}
+
+#
+# Load Export modules
+#
+$ModuleFiles = Get-ChildItem `
+    -Path $ModulesRoot `
     -Filter "*.ps1" `
+    -File `
     -ErrorAction SilentlyContinue |
-    Sort-Object Name)
+    Sort-Object Name
 
 if ($ModuleFiles.Count -eq 0) {
+
     Write-Warning "No export modules found."
+
 }
 else {
 
@@ -205,5 +229,3 @@ $Stopwatch.Stop()
 Write-Host ""
 Write-Host "Completed in $($Stopwatch.Elapsed.ToString('mm\:ss\.fff'))" -ForegroundColor Yellow
 Write-Host ""
-
-

@@ -1,0 +1,21 @@
+{
+  "creationSource": null,
+  "templateReference": {
+    "templateId": "",
+    "templateFamily": "none",
+    "templateDisplayVersion": null,
+    "templateDisplayName": null
+  },
+  "lastModifiedDateTime": "2026-07-27T20:41:26.9917276Z",
+  "settingCount": 2,
+  "description": "",
+  "priorityMetaData": null,
+  "createdDateTime": "2026-07-27T20:41:26.9917276Z",
+  "platforms": "windows10",
+  "technologies": "mdm",
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "name": "CFG-WIN11-Explorer",
+  "id": "c4acdd06-51b5-4343-91e9-d7f820698781"
+}

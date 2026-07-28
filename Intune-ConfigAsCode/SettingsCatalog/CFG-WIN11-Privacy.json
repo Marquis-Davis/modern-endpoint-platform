@@ -1,0 +1,21 @@
+{
+  "creationSource": null,
+  "templateReference": {
+    "templateId": "",
+    "templateFamily": "none",
+    "templateDisplayVersion": null,
+    "templateDisplayName": null
+  },
+  "lastModifiedDateTime": "2026-07-27T21:00:15.0986277Z",
+  "settingCount": 6,
+  "description": "This removes telemetry, ads, consumer experiences, suggestions, etc.",
+  "priorityMetaData": null,
+  "createdDateTime": "2026-07-27T21:00:15.0986277Z",
+  "platforms": "windows10",
+  "technologies": "mdm",
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "name": "CFG-WIN11-Privacy",
+  "id": "a8a9bbd0-d8a1-4987-823f-03fbf28d52e4"
+}
