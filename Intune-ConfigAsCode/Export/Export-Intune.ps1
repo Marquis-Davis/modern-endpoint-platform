@@ -15,7 +15,11 @@
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-Write-Host ""
+Set-StrictMode -Version Latest
+$ErrorActionPreference = 'Stop'
+
+$Stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
+
 Write-Host "==========================================" -ForegroundColor Cyan
 Write-Host " Intune Configuration Export" -ForegroundColor Cyan
 Write-Host "==========================================" -ForegroundColor Cyan
@@ -79,8 +83,27 @@ if (Get-Command Export-UpdateRings -ErrorAction SilentlyContinue) {
     Export-UpdateRings -RepositoryRoot $RepositoryRoot
 }
 
+if (Get-Command Export-FeatureUpdates -ErrorAction SilentlyContinue) {
+    Export-FeatureUpdates -RepositoryRoot $RepositoryRoot
+}
+
+if (Get-Command Export-DriverUpdates -ErrorAction SilentlyContinue) {
+    Export-DriverUpdates -RepositoryRoot $RepositoryRoot
+}
+
+if (Get-Command Export-CompliancePolicies -ErrorAction SilentlyContinue) {
+    Export-CompliancePolicies -RepositoryRoot $RepositoryRoot
+}
+
 Write-Host ""
 Write-Host "==========================================" -ForegroundColor Green
 Write-Host " Export Complete" -ForegroundColor Green
 Write-Host "==========================================" -ForegroundColor Green
+
+$Stopwatch.Stop()
+
 Write-Host ""
+Write-Host "Completed in $($Stopwatch.Elapsed.ToString('mm\:ss\.fff'))" -ForegroundColor Yellow
+Write-Host ""
+
+
