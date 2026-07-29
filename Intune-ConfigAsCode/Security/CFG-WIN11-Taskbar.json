@@ -1,21 +1,21 @@
 {
-  "creationSource": null,
+  "description": "",
+  "priorityMetaData": null,
   "templateReference": {
     "templateId": "",
     "templateFamily": "none",
     "templateDisplayVersion": null,
     "templateDisplayName": null
   },
-  "lastModifiedDateTime": "2026-07-27T20:52:57.4985613Z",
-  "settingCount": 1,
-  "description": "",
-  "priorityMetaData": null,
-  "createdDateTime": "2026-07-27T20:52:57.4985613Z",
-  "platforms": "windows10",
-  "technologies": "mdm",
   "roleScopeTagIds": [
     "0"
   ],
-  "name": "CFG-WIN11-Taskbar",
-  "id": "b059bfef-1f26-4c9e-a997-9e8aaa1d6819"
+  "creationSource": null,
+  "platforms": "windows10",
+  "settingCount": 1,
+  "createdDateTime": "2026-07-27T20:52:57.4985613Z",
+  "id": "b059bfef-1f26-4c9e-a997-9e8aaa1d6819",
+  "technologies": "mdm",
+  "lastModifiedDateTime": "2026-07-27T20:52:57.4985613Z",
+  "name": "CFG-WIN11-Taskbar"
 }

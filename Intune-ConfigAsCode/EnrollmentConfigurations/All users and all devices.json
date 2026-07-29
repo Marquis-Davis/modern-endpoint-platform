@@ -1,0 +1,13 @@
+{
+  "version": 0,
+  "@odata.type": "#microsoft.graph.windowsRestoreDeviceEnrollmentConfiguration",
+  "roleScopeTagIds": [],
+  "id": "a6a95981-8474-4a17-8c78-bcb1689dc1ba_WindowsRestore",
+  "displayName": "All users and all devices",
+  "deviceEnrollmentConfigurationType": "windowsRestore",
+  "createdDateTime": "0001-01-01T00:00:00Z",
+  "description": "This is the default Windows Restore configuration applied with the lowest priority to all users and all devices regardless of group membership.",
+  "state": "notConfigured",
+  "priority": 0,
+  "lastModifiedDateTime": "2026-07-05T15:54:01Z"
+}

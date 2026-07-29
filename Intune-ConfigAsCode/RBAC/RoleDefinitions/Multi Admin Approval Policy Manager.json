@@ -1,0 +1,59 @@
+{
+  "@odata.type": "#microsoft.graph.deviceAndAppManagementRoleDefinition",
+  "isBuiltIn": true,
+  "roleScopeTagIds": [],
+  "id": "5500eb3c-d329-45fd-b3a9-5f87c2cc5e03",
+  "displayName": "Multi Admin Approval Policy Manager",
+  "description": "Multi Admin Approval Policy Manager can manage the access policies that configure Multi-admin approval including approving changes to existing policy or creating new access policies.",
+  "isBuiltInRoleDefinition": true,
+  "rolePermissions": [
+    {
+      "actions": [
+        "Microsoft.Intune_Organization_Read",
+        "Microsoft.Intune_MultiAdminApproval_CreateAccessPolicy",
+        "Microsoft.Intune_MultiAdminApproval_ReadAccessPolicy",
+        "Microsoft.Intune_MultiAdminApproval_UpdateAccessPolicy",
+        "Microsoft.Intune_MultiAdminApproval_DeleteAccessPolicy",
+        "Microsoft.Intune_MultiAdminApproval_ApprovalForMultiAdminApproval"
+      ],
+      "resourceActions": [
+        {
+          "allowedResourceActions": [
+            "Microsoft.Intune_Organization_Read",
+            "Microsoft.Intune_MultiAdminApproval_CreateAccessPolicy",
+            "Microsoft.Intune_MultiAdminApproval_ReadAccessPolicy",
+            "Microsoft.Intune_MultiAdminApproval_UpdateAccessPolicy",
+            "Microsoft.Intune_MultiAdminApproval_DeleteAccessPolicy",
+            "Microsoft.Intune_MultiAdminApproval_ApprovalForMultiAdminApproval"
+          ],
+          "notAllowedResourceActions": []
+        }
+      ]
+    }
+  ],
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Intune_Organization_Read",
+        "Microsoft.Intune_MultiAdminApproval_CreateAccessPolicy",
+        "Microsoft.Intune_MultiAdminApproval_ReadAccessPolicy",
+        "Microsoft.Intune_MultiAdminApproval_UpdateAccessPolicy",
+        "Microsoft.Intune_MultiAdminApproval_DeleteAccessPolicy",
+        "Microsoft.Intune_MultiAdminApproval_ApprovalForMultiAdminApproval"
+      ],
+      "resourceActions": [
+        {
+          "allowedResourceActions": [
+            "Microsoft.Intune_Organization_Read",
+            "Microsoft.Intune_MultiAdminApproval_CreateAccessPolicy",
+            "Microsoft.Intune_MultiAdminApproval_ReadAccessPolicy",
+            "Microsoft.Intune_MultiAdminApproval_UpdateAccessPolicy",
+            "Microsoft.Intune_MultiAdminApproval_DeleteAccessPolicy",
+            "Microsoft.Intune_MultiAdminApproval_ApprovalForMultiAdminApproval"
+          ],
+          "notAllowedResourceActions": []
+        }
+      ]
+    }
+  ]
+}

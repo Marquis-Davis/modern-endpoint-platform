@@ -1,0 +1,107 @@
+{
+  "supersededAppCount": 0,
+  "createdDateTime": "2026-07-24T10:22:05Z",
+  "minimumCpuSpeedInMHz": null,
+  "uploadState": 1,
+  "roleScopeTagIds": [],
+  "informationUrl": null,
+  "isAssigned": true,
+  "largeIcon": null,
+  "committedContentVersion": "1",
+  "minimumFreeDiskSpaceInMB": null,
+  "privacyInformationUrl": "",
+  "activeInstallScript": null,
+  "minimumMemoryInMB": null,
+  "@odata.type": "#microsoft.graph.win32LobApp",
+  "supersedingAppCount": 0,
+  "owner": "Marquis",
+  "publisher": "MSFT",
+  "id": "a0e1f574-aca3-4329-97c0-a3521fcb36b0",
+  "developer": "Microsoft",
+  "isFeatured": false,
+  "size": 182016,
+  "returnCodes": [
+    {
+      "returnCode": 0,
+      "type": "success"
+    },
+    {
+      "returnCode": 1707,
+      "type": "success"
+    },
+    {
+      "returnCode": 3010,
+      "type": "softReboot"
+    },
+    {
+      "returnCode": 1641,
+      "type": "hardReboot"
+    },
+    {
+      "returnCode": 1618,
+      "type": "retry"
+    }
+  ],
+  "installExperience": {
+    "deviceRestartBehavior": "suppress",
+    "maxRunTimeInMinutes": 60,
+    "runAsAccount": "system",
+    "inUseBehavior": null
+  },
+  "dependentAppCount": 0,
+  "activeUninstallScript": null,
+  "fileName": "IntunePackage.intunewin",
+  "displayName": "CMTrace",
+  "rules": [
+    {
+      "operationType": "notConfigured",
+      "@odata.type": "#microsoft.graph.win32LobAppPowerShellScriptRule",
+      "runAsAccount": null,
+      "displayName": null,
+      "runAs32Bit": false,
+      "operator": "notConfigured",
+      "scriptContent": "IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09DQojIEdlbmVyaWMgRGV0ZWN0aW9uIFNjcmlwdA0KIyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09DQoNCiRNYW5pZmVzdCA9IEdldC1Db250ZW50IChKb2luLVBhdGggJFBTU2NyaXB0Um9vdCAiYXBwLmpzb24iKSAtUmF3IHwgQ29udmVydEZyb20tSnNvbg0KDQokRGVzdGluYXRpb24gPSBKb2luLVBhdGggYA0KICAgIChKb2luLVBhdGggJGVudjpQcm9ncmFtRmlsZXMgJE1hbmlmZXN0LkFwcGxpY2F0aW9uLk5hbWUpIGANCiAgICAkTWFuaWZlc3QuU291cmNlLlNldHVwRmlsZQ0KDQpXcml0ZS1Ib3N0ICJDaGVja2luZyBmb3I6ICREZXN0aW5hdGlvbiINCg0KaWYgKFRlc3QtUGF0aCAtTGl0ZXJhbFBhdGggJERlc3RpbmF0aW9uKQ0Kew0KICAgIFdyaXRlLU91dHB1dCAiSW5zdGFsbGVkIg0KICAgIGV4aXQgMA0KfQ0KDQpXcml0ZS1PdXRwdXQgIk5vdCBJbnN0YWxsZWQiDQpleGl0IDE=",
+      "enforceSignatureCheck": false,
+      "ruleType": "detection",
+      "comparisonValue": null
+    }
+  ],
+  "requirementRules": [],
+  "displayVersion": "5.2403.1085.1000",
+  "allowAvailableUninstall": false,
+  "minimumNumberOfProcessors": null,
+  "minimumSupportedOperatingSystem": {
+    "v10_2004": false,
+    "v10_1803": false,
+    "v10_2H20": false,
+    "v10_1909": false,
+    "v10_1703": false,
+    "v8_1": false,
+    "v8_0": false,
+    "v10_1709": false,
+    "v10_1607": false,
+    "v10_1903": false,
+    "v10_1809": false,
+    "v10_0": false,
+    "v10_21H1": false
+  },
+  "uninstallCommandLine": "powershell.exe -ExecutionPolicy Bypass -File Uninstall.ps1",
+  "msiInformation": null,
+  "description": "Utilities",
+  "detectionRules": [
+    {
+      "@odata.type": "#microsoft.graph.win32LobAppPowerShellScriptDetection",
+      "runAs32Bit": false,
+      "scriptContent": "IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09DQojIEdlbmVyaWMgRGV0ZWN0aW9uIFNjcmlwdA0KIyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09DQoNCiRNYW5pZmVzdCA9IEdldC1Db250ZW50IChKb2luLVBhdGggJFBTU2NyaXB0Um9vdCAiYXBwLmpzb24iKSAtUmF3IHwgQ29udmVydEZyb20tSnNvbg0KDQokRGVzdGluYXRpb24gPSBKb2luLVBhdGggYA0KICAgIChKb2luLVBhdGggJGVudjpQcm9ncmFtRmlsZXMgJE1hbmlmZXN0LkFwcGxpY2F0aW9uLk5hbWUpIGANCiAgICAkTWFuaWZlc3QuU291cmNlLlNldHVwRmlsZQ0KDQpXcml0ZS1Ib3N0ICJDaGVja2luZyBmb3I6ICREZXN0aW5hdGlvbiINCg0KaWYgKFRlc3QtUGF0aCAtTGl0ZXJhbFBhdGggJERlc3RpbmF0aW9uKQ0Kew0KICAgIFdyaXRlLU91dHB1dCAiSW5zdGFsbGVkIg0KICAgIGV4aXQgMA0KfQ0KDQpXcml0ZS1PdXRwdXQgIk5vdCBJbnN0YWxsZWQiDQpleGl0IDE=",
+      "enforceSignatureCheck": false
+    }
+  ],
+  "applicableArchitectures": "none",
+  "minimumSupportedWindowsRelease": "Windows11_22H2",
+  "allowedArchitectures": "x86,x64,arm64",
+  "publishingState": "published",
+  "notes": "",
+  "installCommandLine": "powershell.exe -ExecutionPolicy Bypass -File Install.ps1",
+  "lastModifiedDateTime": "2026-07-24T10:22:05Z",
+  "setupFilePath": "CMTrace.exe"
+}

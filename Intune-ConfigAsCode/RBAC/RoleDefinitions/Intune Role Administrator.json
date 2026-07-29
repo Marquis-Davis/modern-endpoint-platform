@@ -1,0 +1,59 @@
+{
+  "@odata.type": "#microsoft.graph.deviceAndAppManagementRoleDefinition",
+  "isBuiltIn": true,
+  "roleScopeTagIds": [],
+  "id": "fb2603eb-3c87-4be3-8b5b-d58a5b4a0bc0",
+  "displayName": "Intune Role Administrator",
+  "description": "Intune Role Administrators manage custom Intune roles and add assignments for built-in Intune roles. It is the only Intune role that can assign permissions to Administrators.",
+  "isBuiltInRoleDefinition": true,
+  "rolePermissions": [
+    {
+      "actions": [
+        "Microsoft.Intune_Organization_Read",
+        "Microsoft.Intune_Roles_Create",
+        "Microsoft.Intune_Roles_Read",
+        "Microsoft.Intune_Roles_Update",
+        "Microsoft.Intune_Roles_Delete",
+        "Microsoft.Intune_Roles_Assign"
+      ],
+      "resourceActions": [
+        {
+          "allowedResourceActions": [
+            "Microsoft.Intune_Organization_Read",
+            "Microsoft.Intune_Roles_Create",
+            "Microsoft.Intune_Roles_Read",
+            "Microsoft.Intune_Roles_Update",
+            "Microsoft.Intune_Roles_Delete",
+            "Microsoft.Intune_Roles_Assign"
+          ],
+          "notAllowedResourceActions": []
+        }
+      ]
+    }
+  ],
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Intune_Organization_Read",
+        "Microsoft.Intune_Roles_Create",
+        "Microsoft.Intune_Roles_Read",
+        "Microsoft.Intune_Roles_Update",
+        "Microsoft.Intune_Roles_Delete",
+        "Microsoft.Intune_Roles_Assign"
+      ],
+      "resourceActions": [
+        {
+          "allowedResourceActions": [
+            "Microsoft.Intune_Organization_Read",
+            "Microsoft.Intune_Roles_Create",
+            "Microsoft.Intune_Roles_Read",
+            "Microsoft.Intune_Roles_Update",
+            "Microsoft.Intune_Roles_Delete",
+            "Microsoft.Intune_Roles_Assign"
+          ],
+          "notAllowedResourceActions": []
+        }
+      ]
+    }
+  ]
+}

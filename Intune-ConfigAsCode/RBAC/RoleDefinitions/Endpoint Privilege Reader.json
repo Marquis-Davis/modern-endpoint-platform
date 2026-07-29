@@ -1,0 +1,59 @@
+{
+  "@odata.type": "#microsoft.graph.deviceAndAppManagementRoleDefinition",
+  "isBuiltIn": true,
+  "roleScopeTagIds": [],
+  "id": "9553af24-bd83-4ac3-a339-0e58f9e5478e",
+  "displayName": "Endpoint Privilege Reader",
+  "description": "Endpoint Privilege Readers can view Endpoint Privilege Management (EPM) policies in the Intune console.",
+  "isBuiltInRoleDefinition": true,
+  "rolePermissions": [
+    {
+      "actions": [
+        "Microsoft.Intune_Organization_Read",
+        "Microsoft.Intune_EpmPolicy_Read",
+        "Microsoft.Intune_EpmPolicy_ViewReports",
+        "Microsoft.Intune_EpmPolicy_ViewElevationRequests",
+        "Microsoft.Intune_ManagedDevices_Read",
+        "Microsoft.Intune_AdminTasks_Read"
+      ],
+      "resourceActions": [
+        {
+          "allowedResourceActions": [
+            "Microsoft.Intune_Organization_Read",
+            "Microsoft.Intune_EpmPolicy_Read",
+            "Microsoft.Intune_EpmPolicy_ViewReports",
+            "Microsoft.Intune_EpmPolicy_ViewElevationRequests",
+            "Microsoft.Intune_ManagedDevices_Read",
+            "Microsoft.Intune_AdminTasks_Read"
+          ],
+          "notAllowedResourceActions": []
+        }
+      ]
+    }
+  ],
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Intune_Organization_Read",
+        "Microsoft.Intune_EpmPolicy_Read",
+        "Microsoft.Intune_EpmPolicy_ViewReports",
+        "Microsoft.Intune_EpmPolicy_ViewElevationRequests",
+        "Microsoft.Intune_ManagedDevices_Read",
+        "Microsoft.Intune_AdminTasks_Read"
+      ],
+      "resourceActions": [
+        {
+          "allowedResourceActions": [
+            "Microsoft.Intune_Organization_Read",
+            "Microsoft.Intune_EpmPolicy_Read",
+            "Microsoft.Intune_EpmPolicy_ViewReports",
+            "Microsoft.Intune_EpmPolicy_ViewElevationRequests",
+            "Microsoft.Intune_ManagedDevices_Read",
+            "Microsoft.Intune_AdminTasks_Read"
+          ],
+          "notAllowedResourceActions": []
+        }
+      ]
+    }
+  ]
+}

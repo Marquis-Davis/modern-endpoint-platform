@@ -1,0 +1,91 @@
+{
+  "@odata.type": "#microsoft.graph.deviceAndAppManagementRoleDefinition",
+  "isBuiltIn": true,
+  "roleScopeTagIds": [],
+  "id": "e9a9f614-7527-44e2-a61a-1879747ccfd7",
+  "displayName": "Endpoint Privilege Manager",
+  "description": "Endpoint Privilege Managers can manage Endpoint Privilege Management (EPM) policies in the Intune console.",
+  "isBuiltInRoleDefinition": true,
+  "rolePermissions": [
+    {
+      "actions": [
+        "Microsoft.Intune_Organization_Read",
+        "Microsoft.Intune_EpmPolicy_Create",
+        "Microsoft.Intune_EpmPolicy_Read",
+        "Microsoft.Intune_EpmPolicy_Update",
+        "Microsoft.Intune_EpmPolicy_Delete",
+        "Microsoft.Intune_EpmPolicy_Assign",
+        "Microsoft.Intune_EpmPolicy_ViewElevationRequests",
+        "Microsoft.Intune_EpmPolicy_ModifyElevationRequests",
+        "Microsoft.Intune_EpmPolicy_ViewReports",
+        "Microsoft.Intune_ManagedDevices_Read",
+        "Microsoft.Intune_AdminTasks_Read",
+        "Microsoft.Intune_AdminTasks_Create",
+        "Microsoft.Intune_AdminTasks_Update",
+        "Microsoft.Intune_AdminTasks_Delete"
+      ],
+      "resourceActions": [
+        {
+          "allowedResourceActions": [
+            "Microsoft.Intune_Organization_Read",
+            "Microsoft.Intune_EpmPolicy_Create",
+            "Microsoft.Intune_EpmPolicy_Read",
+            "Microsoft.Intune_EpmPolicy_Update",
+            "Microsoft.Intune_EpmPolicy_Delete",
+            "Microsoft.Intune_EpmPolicy_Assign",
+            "Microsoft.Intune_EpmPolicy_ViewElevationRequests",
+            "Microsoft.Intune_EpmPolicy_ModifyElevationRequests",
+            "Microsoft.Intune_EpmPolicy_ViewReports",
+            "Microsoft.Intune_ManagedDevices_Read",
+            "Microsoft.Intune_AdminTasks_Read",
+            "Microsoft.Intune_AdminTasks_Create",
+            "Microsoft.Intune_AdminTasks_Update",
+            "Microsoft.Intune_AdminTasks_Delete"
+          ],
+          "notAllowedResourceActions": []
+        }
+      ]
+    }
+  ],
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Intune_Organization_Read",
+        "Microsoft.Intune_EpmPolicy_Create",
+        "Microsoft.Intune_EpmPolicy_Read",
+        "Microsoft.Intune_EpmPolicy_Update",
+        "Microsoft.Intune_EpmPolicy_Delete",
+        "Microsoft.Intune_EpmPolicy_Assign",
+        "Microsoft.Intune_EpmPolicy_ViewElevationRequests",
+        "Microsoft.Intune_EpmPolicy_ModifyElevationRequests",
+        "Microsoft.Intune_EpmPolicy_ViewReports",
+        "Microsoft.Intune_ManagedDevices_Read",
+        "Microsoft.Intune_AdminTasks_Read",
+        "Microsoft.Intune_AdminTasks_Create",
+        "Microsoft.Intune_AdminTasks_Update",
+        "Microsoft.Intune_AdminTasks_Delete"
+      ],
+      "resourceActions": [
+        {
+          "allowedResourceActions": [
+            "Microsoft.Intune_Organization_Read",
+            "Microsoft.Intune_EpmPolicy_Create",
+            "Microsoft.Intune_EpmPolicy_Read",
+            "Microsoft.Intune_EpmPolicy_Update",
+            "Microsoft.Intune_EpmPolicy_Delete",
+            "Microsoft.Intune_EpmPolicy_Assign",
+            "Microsoft.Intune_EpmPolicy_ViewElevationRequests",
+            "Microsoft.Intune_EpmPolicy_ModifyElevationRequests",
+            "Microsoft.Intune_EpmPolicy_ViewReports",
+            "Microsoft.Intune_ManagedDevices_Read",
+            "Microsoft.Intune_AdminTasks_Read",
+            "Microsoft.Intune_AdminTasks_Create",
+            "Microsoft.Intune_AdminTasks_Update",
+            "Microsoft.Intune_AdminTasks_Delete"
+          ],
+          "notAllowedResourceActions": []
+        }
+      ]
+    }
+  ]
+}
