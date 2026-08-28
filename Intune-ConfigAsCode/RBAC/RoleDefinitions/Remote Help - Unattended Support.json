@@ -1,0 +1,53 @@
+{
+  "@odata.type": "#microsoft.graph.deviceAndAppManagementRoleDefinition",
+  "displayName": "Remote Help - Unattended Support",
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "isBuiltIn": false,
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Intune_RemoteAssistanceApp_WindowsUnattended",
+        "Microsoft.Intune_RemoteAssistanceApp_TakeFullControl",
+        "Microsoft.Intune_RemoteAssistanceApp_ViewScreen",
+        "Microsoft.Intune_RemoteAssistanceApp_Elevation"
+      ],
+      "resourceActions": [
+        {
+          "allowedResourceActions": [
+            "Microsoft.Intune_RemoteAssistanceApp_WindowsUnattended",
+            "Microsoft.Intune_RemoteAssistanceApp_TakeFullControl",
+            "Microsoft.Intune_RemoteAssistanceApp_ViewScreen",
+            "Microsoft.Intune_RemoteAssistanceApp_Elevation"
+          ],
+          "notAllowedResourceActions": []
+        }
+      ]
+    }
+  ],
+  "isBuiltInRoleDefinition": false,
+  "id": "525a56ac-3368-49b9-810a-edfebb408292",
+  "description": "",
+  "rolePermissions": [
+    {
+      "actions": [
+        "Microsoft.Intune_RemoteAssistanceApp_WindowsUnattended",
+        "Microsoft.Intune_RemoteAssistanceApp_TakeFullControl",
+        "Microsoft.Intune_RemoteAssistanceApp_ViewScreen",
+        "Microsoft.Intune_RemoteAssistanceApp_Elevation"
+      ],
+      "resourceActions": [
+        {
+          "allowedResourceActions": [
+            "Microsoft.Intune_RemoteAssistanceApp_WindowsUnattended",
+            "Microsoft.Intune_RemoteAssistanceApp_TakeFullControl",
+            "Microsoft.Intune_RemoteAssistanceApp_ViewScreen",
+            "Microsoft.Intune_RemoteAssistanceApp_Elevation"
+          ],
+          "notAllowedResourceActions": []
+        }
+      ]
+    }
+  ]
+}

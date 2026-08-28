@@ -1,0 +1,110 @@
+{
+  "minimumCpuSpeedInMHz": null,
+  "lastModifiedDateTime": "2026-08-26T20:15:44Z",
+  "privacyInformationUrl": "",
+  "fileName": "Microsoft.RDInfra.RDAgentBootLoader.Installer-x64-1.0.11388.1600.intunewin",
+  "installCommandLine": "msiexec /i \"Microsoft.RDInfra.RDAgentBootLoader.Installer-x64-1.0.11388.1600.msi\" /qn",
+  "minimumFreeDiskSpaceInMB": null,
+  "minimumNumberOfProcessors": null,
+  "committedContentVersion": "1",
+  "allowedArchitectures": null,
+  "detectionRules": [
+    {
+      "@odata.type": "#microsoft.graph.win32LobAppProductCodeDetection",
+      "productVersionOperator": "notConfigured",
+      "productCode": "{B7EAA4DF-2870-4386-910D-6465715A00BE}",
+      "productVersion": null
+    }
+  ],
+  "activeUninstallScript": null,
+  "@odata.type": "#microsoft.graph.win32LobApp",
+  "displayVersion": "1.0.11388.1600",
+  "uploadState": 1,
+  "allowAvailableUninstall": true,
+  "informationUrl": null,
+  "isFeatured": false,
+  "createdDateTime": "2026-08-26T20:15:44Z",
+  "requirementRules": [],
+  "installExperience": {
+    "maxRunTimeInMinutes": 60,
+    "inUseBehavior": null,
+    "deviceRestartBehavior": "suppress",
+    "runAsAccount": "system"
+  },
+  "largeIcon": null,
+  "size": 16412560,
+  "minimumMemoryInMB": null,
+  "owner": "",
+  "minimumSupportedWindowsRelease": "Windows11_22H2",
+  "msiInformation": {
+    "publisher": "Microsoft Corporation",
+    "productVersion": "1.0.11388.1600",
+    "productName": "Remote Desktop Agent Boot Loader",
+    "upgradeCode": "{B93A2D46-1728-4679-AD6E-EDD9EEF14E39}",
+    "packageType": "perMachine",
+    "requiresReboot": false,
+    "productCode": "{B7EAA4DF-2870-4386-910D-6465715A00BE}"
+  },
+  "minimumSupportedOperatingSystem": {
+    "v10_2H20": false,
+    "v10_1909": false,
+    "v8_0": false,
+    "v10_1709": false,
+    "v8_1": false,
+    "v10_0": false,
+    "v10_1809": false,
+    "v10_2004": false,
+    "v10_1607": false,
+    "v10_1803": false,
+    "v10_1703": false,
+    "v10_21H1": false,
+    "v10_1903": false
+  },
+  "isAssigned": true,
+  "publisher": "Microsoft",
+  "supersedingAppCount": 0,
+  "developer": "",
+  "applicableArchitectures": "x86,x64",
+  "roleScopeTagIds": [],
+  "description": "zure Virtual Desktop Agent Bootloader for Windows unattended Remote Help",
+  "displayName": "Remote Help - AVD Agent Bootloader",
+  "publishingState": "published",
+  "supersededAppCount": 0,
+  "uninstallCommandLine": "msiexec /x \"{B7EAA4DF-2870-4386-910D-6465715A00BE}\" /qn",
+  "setupFilePath": "Microsoft.RDInfra.RDAgentBootLoader.Installer-x64-1.0.11388.1600.msi",
+  "notes": "",
+  "dependentAppCount": 1,
+  "rules": [
+    {
+      "@odata.type": "#microsoft.graph.win32LobAppProductCodeRule",
+      "productVersionOperator": "notConfigured",
+      "productCode": "{B7EAA4DF-2870-4386-910D-6465715A00BE}",
+      "ruleType": "detection",
+      "productVersion": null
+    }
+  ],
+  "id": "4f7dbf10-b135-4f84-b4ee-69688759305f",
+  "activeInstallScript": null,
+  "returnCodes": [
+    {
+      "type": "success",
+      "returnCode": 0
+    },
+    {
+      "type": "success",
+      "returnCode": 1707
+    },
+    {
+      "type": "softReboot",
+      "returnCode": 3010
+    },
+    {
+      "type": "hardReboot",
+      "returnCode": 1641
+    },
+    {
+      "type": "retry",
+      "returnCode": 1618
+    }
+  ]
+}

@@ -1,21 +1,21 @@
 {
-  "description": "Enables silent BitLocker encryption using TPM and automatically backs up recovery keys to Microsoft Entra ID. Pilot deployment.",
+  "name": "SEC-BitLocker-Pilot",
+  "creationSource": null,
   "priorityMetaData": null,
+  "settingCount": 8,
   "templateReference": {
-    "templateId": "46ddfc50-d10f-4867-b852-9434254b3bff_1",
-    "templateFamily": "endpointSecurityDiskEncryption",
     "templateDisplayVersion": "Version 1",
-    "templateDisplayName": "BitLocker"
+    "templateId": "46ddfc50-d10f-4867-b852-9434254b3bff_1",
+    "templateDisplayName": "BitLocker",
+    "templateFamily": "endpointSecurityDiskEncryption"
   },
+  "createdDateTime": "2026-07-06T17:20:10.6617477Z",
+  "technologies": "mdm",
+  "id": "8e110926-9305-4942-a343-518b96b6025d",
+  "description": "Enables silent BitLocker encryption using TPM and automatically backs up recovery keys to Microsoft Entra ID. Pilot deployment.",
   "roleScopeTagIds": [
     "0"
   ],
-  "creationSource": null,
-  "platforms": "windows10",
-  "settingCount": 8,
-  "createdDateTime": "2026-07-06T17:20:10.6617477Z",
-  "id": "8e110926-9305-4942-a343-518b96b6025d",
-  "technologies": "mdm",
   "lastModifiedDateTime": "2026-07-27T19:43:25.6528246Z",
-  "name": "SEC-BitLocker-Pilot"
+  "platforms": "windows10"
 }

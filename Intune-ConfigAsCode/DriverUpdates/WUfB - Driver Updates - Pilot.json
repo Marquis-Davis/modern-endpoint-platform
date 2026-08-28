@@ -1,15 +1,15 @@
 {
-  "createdDateTime": "2026-07-27T21:19:01.1589006Z",
-  "inventorySyncStatus": null,
+  "displayName": "WUfB - Driver Updates - Pilot",
+  "deviceReporting": 0,
+  "newUpdates": 0,
   "roleScopeTagIds": [
     "0"
   ],
-  "id": "71aa54ac-859e-4789-8200-8a3c293d7eaf",
-  "displayName": "WUfB - Driver Updates - Pilot",
   "deploymentDeferralInDays": 7,
-  "approvalType": "automatic",
+  "createdDateTime": "2026-07-27T21:19:01.1589006Z",
+  "id": "71aa54ac-859e-4789-8200-8a3c293d7eaf",
   "description": "",
-  "newUpdates": 0,
-  "lastModifiedDateTime": "2026-07-27T21:19:01.1589006Z",
-  "deviceReporting": 0
+  "inventorySyncStatus": null,
+  "approvalType": "automatic",
+  "lastModifiedDateTime": "2026-07-27T21:19:01.1589006Z"
 }

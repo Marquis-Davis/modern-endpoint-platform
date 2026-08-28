@@ -1,0 +1,110 @@
+{
+  "minimumCpuSpeedInMHz": null,
+  "lastModifiedDateTime": "2026-08-26T19:59:10.9055593Z",
+  "privacyInformationUrl": "",
+  "fileName": "Microsoft.RDInfra.RDAgent.Installer-x64-1.0.15008.300.intunewin",
+  "installCommandLine": "msiexec /i \"Microsoft.RDInfra.RDAgent.Installer-x64-1.0.15008.300.msi\" /qn",
+  "minimumFreeDiskSpaceInMB": null,
+  "minimumNumberOfProcessors": null,
+  "committedContentVersion": "1",
+  "allowedArchitectures": null,
+  "detectionRules": [
+    {
+      "@odata.type": "#microsoft.graph.win32LobAppProductCodeDetection",
+      "productVersionOperator": "notConfigured",
+      "productCode": "{9E517C03-7990-4800-A050-ED26F41A2091}",
+      "productVersion": null
+    }
+  ],
+  "activeUninstallScript": null,
+  "@odata.type": "#microsoft.graph.win32LobApp",
+  "displayVersion": "1.0.15008.300",
+  "uploadState": 1,
+  "allowAvailableUninstall": true,
+  "informationUrl": null,
+  "isFeatured": false,
+  "createdDateTime": "2026-08-26T19:59:10.9055593Z",
+  "requirementRules": [],
+  "installExperience": {
+    "maxRunTimeInMinutes": 60,
+    "inUseBehavior": null,
+    "deviceRestartBehavior": "suppress",
+    "runAsAccount": "system"
+  },
+  "largeIcon": null,
+  "size": 94732080,
+  "minimumMemoryInMB": null,
+  "owner": "",
+  "minimumSupportedWindowsRelease": "Windows11_22H2",
+  "msiInformation": {
+    "publisher": "Microsoft Corporation",
+    "productVersion": "1.0.15008.300",
+    "productName": "Remote Desktop Services Infrastructure Agent",
+    "upgradeCode": "{0E4684D0-C111-4704-8741-6C4A00D8BD47}",
+    "packageType": "perMachine",
+    "requiresReboot": false,
+    "productCode": "{9E517C03-7990-4800-A050-ED26F41A2091}"
+  },
+  "minimumSupportedOperatingSystem": {
+    "v10_2H20": false,
+    "v10_1909": false,
+    "v8_0": false,
+    "v10_1709": false,
+    "v8_1": false,
+    "v10_0": false,
+    "v10_1809": false,
+    "v10_2004": false,
+    "v10_1607": false,
+    "v10_1803": false,
+    "v10_1703": false,
+    "v10_21H1": false,
+    "v10_1903": false
+  },
+  "isAssigned": true,
+  "publisher": "Microsoft",
+  "supersedingAppCount": 0,
+  "developer": "",
+  "applicableArchitectures": "x86,x64",
+  "roleScopeTagIds": [],
+  "description": "Azure Virtual Desktop Agent for Windows unattended Remote Hel",
+  "displayName": "Remote Help - AVD Agent",
+  "publishingState": "published",
+  "supersededAppCount": 0,
+  "uninstallCommandLine": "msiexec /x \"{9E517C03-7990-4800-A050-ED26F41A2091}\" /qn",
+  "setupFilePath": "Microsoft.RDInfra.RDAgent.Installer-x64-1.0.15008.300.msi",
+  "notes": "",
+  "dependentAppCount": 0,
+  "rules": [
+    {
+      "@odata.type": "#microsoft.graph.win32LobAppProductCodeRule",
+      "productVersionOperator": "notConfigured",
+      "productCode": "{9E517C03-7990-4800-A050-ED26F41A2091}",
+      "ruleType": "detection",
+      "productVersion": null
+    }
+  ],
+  "id": "6914ac55-364f-4058-beca-d3c2fce3b1fe",
+  "activeInstallScript": null,
+  "returnCodes": [
+    {
+      "type": "success",
+      "returnCode": 0
+    },
+    {
+      "type": "success",
+      "returnCode": 1707
+    },
+    {
+      "type": "softReboot",
+      "returnCode": 3010
+    },
+    {
+      "type": "hardReboot",
+      "returnCode": 1641
+    },
+    {
+      "type": "retry",
+      "returnCode": 1618
+    }
+  ]
+}

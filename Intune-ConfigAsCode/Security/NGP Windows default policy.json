@@ -1,21 +1,21 @@
 {
-  "description": "Default policy sets settings for all endpoints that are not governed by any other policy, ensuring that all your clients are managed as soon as MDE is deployed. The default policy is based on a set of pre-configured recommended settings and can be adjusted by user with admin priviledges.",
+  "name": "NGP Windows default policy",
+  "creationSource": "MdeDeviceConfigurationPolicies",
   "priorityMetaData": null,
+  "settingCount": 27,
   "templateReference": {
-    "templateId": "804339ad-1553-4478-a742-138fb5807418_1",
-    "templateFamily": "endpointSecurityAntivirus",
     "templateDisplayVersion": "Version 1",
-    "templateDisplayName": "Microsoft Defender Antivirus"
+    "templateId": "804339ad-1553-4478-a742-138fb5807418_1",
+    "templateDisplayName": "Microsoft Defender Antivirus",
+    "templateFamily": "endpointSecurityAntivirus"
   },
+  "createdDateTime": "2026-07-07T15:06:26.7111352Z",
+  "technologies": "mdm,microsoftSense",
+  "id": "df2f89cc-c860-4a9d-87be-0698e816c3b1",
+  "description": "Default policy sets settings for all endpoints that are not governed by any other policy, ensuring that all your clients are managed as soon as MDE is deployed. The default policy is based on a set of pre-configured recommended settings and can be adjusted by user with admin priviledges.",
   "roleScopeTagIds": [
     "0"
   ],
-  "creationSource": "MdeDeviceConfigurationPolicies",
-  "platforms": "windows10",
-  "settingCount": 27,
-  "createdDateTime": "2026-07-07T15:06:26.7111352Z",
-  "id": "df2f89cc-c860-4a9d-87be-0698e816c3b1",
-  "technologies": "mdm,microsoftSense",
   "lastModifiedDateTime": "2026-07-07T15:06:26.7111352Z",
-  "name": "NGP Windows default policy"
+  "platforms": "windows10"
 }

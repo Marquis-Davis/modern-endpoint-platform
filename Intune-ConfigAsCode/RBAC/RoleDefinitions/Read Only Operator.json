@@ -1,12 +1,9 @@
 {
   "@odata.type": "#microsoft.graph.deviceAndAppManagementRoleDefinition",
-  "isBuiltIn": true,
-  "roleScopeTagIds": [],
-  "id": "fa1d7878-e8cb-41a1-8254-0142355c9f84",
   "displayName": "Read Only Operator",
-  "description": "Read Only Operators view user, device, enrollment, configuration and application information and cannot make changes to Intune.",
-  "isBuiltInRoleDefinition": true,
-  "rolePermissions": [
+  "roleScopeTagIds": [],
+  "isBuiltIn": true,
+  "permissions": [
     {
       "actions": [
         "Microsoft.Intune_MobileApps_Read",
@@ -129,7 +126,10 @@
       ]
     }
   ],
-  "permissions": [
+  "isBuiltInRoleDefinition": true,
+  "id": "fa1d7878-e8cb-41a1-8254-0142355c9f84",
+  "description": "Read Only Operators view user, device, enrollment, configuration and application information and cannot make changes to Intune.",
+  "rolePermissions": [
     {
       "actions": [
         "Microsoft.Intune_MobileApps_Read",

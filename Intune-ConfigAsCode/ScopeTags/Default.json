@@ -1,6 +1,6 @@
 {
-  "description": "Default Role Scope Tag. This will exist by default on all Intune entities whenever a user defined Role Scope Tag is not present.",
   "isBuiltIn": true,
-  "displayName": "Default",
-  "id": "0"
+  "id": "0",
+  "description": "Default Role Scope Tag. This will exist by default on all Intune entities whenever a user defined Role Scope Tag is not present.",
+  "displayName": "Default"
 }

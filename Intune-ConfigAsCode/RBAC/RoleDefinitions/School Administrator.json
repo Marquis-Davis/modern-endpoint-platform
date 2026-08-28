@@ -1,12 +1,9 @@
 {
   "@odata.type": "#microsoft.graph.deviceAndAppManagementRoleDefinition",
-  "isBuiltIn": true,
-  "roleScopeTagIds": [],
-  "id": "2f9f4f7e-2d13-427b-adf2-361a1eef7ae8",
   "displayName": "School Administrator",
-  "description": "School Administrators can manage apps and settings for their groups. They can take remote actions on devices, including remotely locking them, restarting them, and retiring them from management.",
-  "isBuiltInRoleDefinition": true,
-  "rolePermissions": [
+  "roleScopeTagIds": [],
+  "isBuiltIn": true,
+  "permissions": [
     {
       "actions": [
         "Microsoft.Intune_AppleDeviceSerialNumbers_Delete",
@@ -261,7 +258,10 @@
       ]
     }
   ],
-  "permissions": [
+  "isBuiltInRoleDefinition": true,
+  "id": "2f9f4f7e-2d13-427b-adf2-361a1eef7ae8",
+  "description": "School Administrators can manage apps and settings for their groups. They can take remote actions on devices, including remotely locking them, restarting them, and retiring them from management.",
+  "rolePermissions": [
     {
       "actions": [
         "Microsoft.Intune_AppleDeviceSerialNumbers_Delete",

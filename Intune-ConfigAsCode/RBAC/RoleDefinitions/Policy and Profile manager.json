@@ -1,12 +1,9 @@
 {
   "@odata.type": "#microsoft.graph.deviceAndAppManagementRoleDefinition",
-  "isBuiltIn": true,
-  "roleScopeTagIds": [],
-  "id": "0bd113fe-6be5-400c-a28f-ae5553f9c0be",
   "displayName": "Policy and Profile manager",
-  "description": "Policy and Profile Managers manage compliance policy, configuration profiles, Apple enrollment, Android Enterprise enrollment profiles and corporate device identifiers.",
-  "isBuiltInRoleDefinition": true,
-  "rolePermissions": [
+  "roleScopeTagIds": [],
+  "isBuiltIn": true,
+  "permissions": [
     {
       "actions": [
         "Microsoft.Intune_Organization_Read",
@@ -183,7 +180,10 @@
       ]
     }
   ],
-  "permissions": [
+  "isBuiltInRoleDefinition": true,
+  "id": "0bd113fe-6be5-400c-a28f-ae5553f9c0be",
+  "description": "Policy and Profile Managers manage compliance policy, configuration profiles, Apple enrollment, Android Enterprise enrollment profiles and corporate device identifiers.",
+  "rolePermissions": [
     {
       "actions": [
         "Microsoft.Intune_Organization_Read",

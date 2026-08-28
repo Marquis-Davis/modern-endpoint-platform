@@ -1,21 +1,21 @@
 {
-  "description": "",
+  "name": "CFG-WIN11-Explorer",
+  "creationSource": null,
   "priorityMetaData": null,
+  "settingCount": 2,
   "templateReference": {
-    "templateId": "",
-    "templateFamily": "none",
     "templateDisplayVersion": null,
-    "templateDisplayName": null
+    "templateId": "",
+    "templateDisplayName": null,
+    "templateFamily": "none"
   },
+  "createdDateTime": "2026-07-27T20:41:26.9917276Z",
+  "technologies": "mdm",
+  "id": "c4acdd06-51b5-4343-91e9-d7f820698781",
+  "description": "",
   "roleScopeTagIds": [
     "0"
   ],
-  "creationSource": null,
-  "platforms": "windows10",
-  "settingCount": 2,
-  "createdDateTime": "2026-07-27T20:41:26.9917276Z",
-  "id": "c4acdd06-51b5-4343-91e9-d7f820698781",
-  "technologies": "mdm",
   "lastModifiedDateTime": "2026-07-27T20:41:26.9917276Z",
-  "name": "CFG-WIN11-Explorer"
+  "platforms": "windows10"
 }

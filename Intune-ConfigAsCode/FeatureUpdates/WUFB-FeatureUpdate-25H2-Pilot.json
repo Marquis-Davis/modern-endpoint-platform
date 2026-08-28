@@ -1,20 +1,20 @@
 {
-  "endOfSupportDate": "2028-10-10T00:00:00Z",
-  "createdDateTime": "2026-07-27T21:15:37.3380774Z",
-  "rolloutSettings": {
-    "offerIntervalInDays": null,
-    "offerStartDateTimeInUTC": null,
-    "offerEndDateTimeInUTC": null
-  },
-  "featureUpdateVersion": "Windows 11, version 25H2",
+  "displayName": "WUFB-FeatureUpdate-25H2-Pilot",
+  "installFeatureUpdatesOptional": false,
   "roleScopeTagIds": [
     "0"
   ],
+  "featureUpdateVersion": "Windows 11, version 25H2",
+  "endOfSupportDate": "2028-10-10T00:00:00Z",
+  "createdDateTime": "2026-07-27T21:15:37.3380774Z",
   "id": "ca2c573e-41b1-4732-a508-e9a49cc066a6",
-  "displayName": "WUFB-FeatureUpdate-25H2-Pilot",
   "description": "",
-  "installFeatureUpdatesOptional": false,
-  "installLatestWindows10OnWindows11IneligibleDevice": false,
   "deployableContentDisplayName": null,
-  "lastModifiedDateTime": "2026-07-27T21:22:52.9771923Z"
+  "rolloutSettings": {
+    "offerEndDateTimeInUTC": null,
+    "offerIntervalInDays": null,
+    "offerStartDateTimeInUTC": null
+  },
+  "lastModifiedDateTime": "2026-07-27T21:22:52.9771923Z",
+  "installLatestWindows10OnWindows11IneligibleDevice": false
 }

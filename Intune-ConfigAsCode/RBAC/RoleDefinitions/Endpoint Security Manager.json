@@ -1,12 +1,9 @@
 {
   "@odata.type": "#microsoft.graph.deviceAndAppManagementRoleDefinition",
-  "isBuiltIn": true,
-  "roleScopeTagIds": [],
-  "id": "c56d53a2-73d0-4502-b6bd-4a9d3dba28d5",
   "displayName": "Endpoint Security Manager",
-  "description": "Manages security and compliance features such as security baselines, device compliance, conditional access, and Microsoft Defender ATP.",
-  "isBuiltInRoleDefinition": true,
-  "rolePermissions": [
+  "roleScopeTagIds": [],
+  "isBuiltIn": true,
+  "permissions": [
     {
       "actions": [
         "Microsoft.Intune_MobileApps_Read",
@@ -219,7 +216,10 @@
       ]
     }
   ],
-  "permissions": [
+  "isBuiltInRoleDefinition": true,
+  "id": "c56d53a2-73d0-4502-b6bd-4a9d3dba28d5",
+  "description": "Manages security and compliance features such as security baselines, device compliance, conditional access, and Microsoft Defender ATP.",
+  "rolePermissions": [
     {
       "actions": [
         "Microsoft.Intune_MobileApps_Read",

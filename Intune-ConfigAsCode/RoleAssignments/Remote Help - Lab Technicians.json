@@ -1,0 +1,11 @@
+{
+  "@odata.type": "#microsoft.graph.deviceAndAppManagementRoleAssignment",
+  "displayName": "Remote Help - Lab Technicians",
+  "resourceScopes": [],
+  "roleScopeTagIds": [],
+  "scopeType": "resourceScope",
+  "id": "83f55117-af5f-4380-bb1a-c8b4f4dd8b6f",
+  "description": "",
+  "members": [],
+  "scopeMembers": []
+}

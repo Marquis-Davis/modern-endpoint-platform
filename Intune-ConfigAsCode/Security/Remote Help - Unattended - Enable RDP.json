@@ -1,21 +1,21 @@
 {
-  "name": "CFG-WIN11-Baseline",
+  "name": "Remote Help - Unattended - Enable RDP",
   "creationSource": null,
   "priorityMetaData": null,
-  "settingCount": 3,
+  "settingCount": 11,
   "templateReference": {
     "templateDisplayVersion": null,
     "templateId": "",
     "templateDisplayName": null,
     "templateFamily": "none"
   },
-  "createdDateTime": "2026-07-27T19:51:47.6398043Z",
+  "createdDateTime": "2026-08-26T17:11:53.9154919Z",
   "technologies": "mdm",
-  "id": "15f3c0b0-dd82-4838-aecd-d7349faf91f3",
-  "description": "Corporate Windows 11 baseline configuration.",
+  "id": "70e00082-8528-4020-8283-e36401d4da40",
+  "description": "",
   "roleScopeTagIds": [
     "0"
   ],
-  "lastModifiedDateTime": "2026-07-27T19:51:47.6398043Z",
+  "lastModifiedDateTime": "2026-08-26T17:11:53.9154919Z",
   "platforms": "windows10"
 }

@@ -1,12 +1,9 @@
 {
   "@odata.type": "#microsoft.graph.deviceAndAppManagementRoleDefinition",
-  "isBuiltIn": true,
-  "roleScopeTagIds": [],
-  "id": "c1d9fcbb-cba5-40b0-bf6b-527006585f4b",
   "displayName": "Application Manager",
-  "description": "Application Managers manage mobile and managed applications, can read device information and can view device configuration profiles.",
-  "isBuiltInRoleDefinition": true,
-  "rolePermissions": [
+  "roleScopeTagIds": [],
+  "isBuiltIn": true,
+  "permissions": [
     {
       "actions": [
         "Microsoft.Intune_Organization_Read",
@@ -117,7 +114,10 @@
       ]
     }
   ],
-  "permissions": [
+  "isBuiltInRoleDefinition": true,
+  "id": "c1d9fcbb-cba5-40b0-bf6b-527006585f4b",
+  "description": "Application Managers manage mobile and managed applications, can read device information and can view device configuration profiles.",
+  "rolePermissions": [
     {
       "actions": [
         "Microsoft.Intune_Organization_Read",

@@ -1,0 +1,21 @@
+{
+  "name": "LAB - Windows - ASR WMI PSExec",
+  "creationSource": null,
+  "priorityMetaData": null,
+  "settingCount": 1,
+  "templateReference": {
+    "templateDisplayVersion": "Version 1",
+    "templateId": "e8c053d6-9f95-42b1-a7f1-ebfd71c67a4b_1",
+    "templateDisplayName": "Attack Surface Reduction Rules",
+    "templateFamily": "endpointSecurityAttackSurfaceReduction"
+  },
+  "createdDateTime": "2026-08-24T02:28:00.2630492Z",
+  "technologies": "mdm,microsoftSense",
+  "id": "512c905e-8f2f-42d4-8c5c-b5ffb811ca1b",
+  "description": "Lab policy for testing ASR protection against process creation originating from WMI and PSExec",
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "lastModifiedDateTime": "2026-08-24T02:28:00.2630492Z",
+  "platforms": "windows10"
+}

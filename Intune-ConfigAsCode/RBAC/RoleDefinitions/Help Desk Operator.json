@@ -1,12 +1,9 @@
 {
   "@odata.type": "#microsoft.graph.deviceAndAppManagementRoleDefinition",
-  "isBuiltIn": true,
-  "roleScopeTagIds": [],
-  "id": "9e0cc482-82df-4ab2-a24c-0c23a3f52e1e",
   "displayName": "Help Desk Operator",
-  "description": "Help Desk Operators perform remote tasks on users and devices and can assign applications or policies to users or devices.",
-  "isBuiltInRoleDefinition": true,
-  "rolePermissions": [
+  "roleScopeTagIds": [],
+  "isBuiltIn": true,
+  "permissions": [
     {
       "actions": [
         "Microsoft.Intune_MobileApps_Read",
@@ -209,7 +206,10 @@
       ]
     }
   ],
-  "permissions": [
+  "isBuiltInRoleDefinition": true,
+  "id": "9e0cc482-82df-4ab2-a24c-0c23a3f52e1e",
+  "description": "Help Desk Operators perform remote tasks on users and devices and can assign applications or policies to users or devices.",
+  "rolePermissions": [
     {
       "actions": [
         "Microsoft.Intune_MobileApps_Read",

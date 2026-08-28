@@ -1,12 +1,9 @@
 {
   "@odata.type": "#microsoft.graph.deviceAndAppManagementRoleDefinition",
-  "isBuiltIn": true,
-  "roleScopeTagIds": [],
-  "id": "e9a9f614-7527-44e2-a61a-1879747ccfd7",
   "displayName": "Endpoint Privilege Manager",
-  "description": "Endpoint Privilege Managers can manage Endpoint Privilege Management (EPM) policies in the Intune console.",
-  "isBuiltInRoleDefinition": true,
-  "rolePermissions": [
+  "roleScopeTagIds": [],
+  "isBuiltIn": true,
+  "permissions": [
     {
       "actions": [
         "Microsoft.Intune_Organization_Read",
@@ -47,7 +44,10 @@
       ]
     }
   ],
-  "permissions": [
+  "isBuiltInRoleDefinition": true,
+  "id": "e9a9f614-7527-44e2-a61a-1879747ccfd7",
+  "description": "Endpoint Privilege Managers can manage Endpoint Privilege Management (EPM) policies in the Intune console.",
+  "rolePermissions": [
     {
       "actions": [
         "Microsoft.Intune_Organization_Read",

@@ -1,0 +1,23 @@
+{
+  "@odata.type": "#microsoft.graph.deviceEnrollmentPlatformRestrictionConfiguration",
+  "displayName": "Windows-Corporate-Enrollment",
+  "platformRestriction": {
+    "osMinimumVersion": null,
+    "osMaximumVersion": null,
+    "blockedSkus": [],
+    "blockedManufacturers": [],
+    "platformBlocked": false,
+    "personalDeviceEnrollmentBlocked": false
+  },
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "priority": 1,
+  "createdDateTime": "2026-08-19T12:46:00.0737333Z",
+  "deviceEnrollmentConfigurationType": "singlePlatformRestriction",
+  "id": "178225a0-b5f9-4243-b761-f0d8e08461a6_SinglePlatformRestriction",
+  "version": 2,
+  "description": "",
+  "platformType": "windows",
+  "lastModifiedDateTime": "2026-08-26T16:47:54.3420389Z"
+}

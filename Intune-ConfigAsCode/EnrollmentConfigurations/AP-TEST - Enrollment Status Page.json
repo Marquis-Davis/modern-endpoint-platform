@@ -1,0 +1,28 @@
+{
+  "createdDateTime": "2026-08-28T17:39:41.8835415Z",
+  "disableUserStatusTrackingAfterFirstUser": true,
+  "version": 1,
+  "priority": 1,
+  "description": "QA - Enrollment Status Page used to validate the Autopilot test application chain before production promotion.",
+  "trackInstallProgressForAutopilotOnly": true,
+  "installProgressTimeoutInMinutes": 60,
+  "allowDeviceUseOnInstallFailure": false,
+  "showInstallationProgress": true,
+  "allowDeviceResetOnInstallFailure": false,
+  "deviceEnrollmentConfigurationType": "windows10EnrollmentCompletionPageConfiguration",
+  "customErrorMessage": "Setup could not be completed. Please try again or contact your support person for help.",
+  "allowLogCollectionOnInstallFailure": true,
+  "blockDeviceSetupRetryByUser": false,
+  "installQualityUpdates": false,
+  "@odata.type": "#microsoft.graph.windows10EnrollmentCompletionPageConfiguration",
+  "allowNonBlockingAppInstallation": true,
+  "lastModifiedDateTime": "2026-08-28T17:39:41.8835415Z",
+  "id": "b1d5c588-5f74-4089-8b4e-cca35f00eb34_Windows10EnrollmentCompletionPageConfiguration",
+  "selectedMobileAppIds": [
+    "65cd702e-2136-481b-bbc7-519fc1a49940"
+  ],
+  "displayName": "AP-TEST - Enrollment Status Page",
+  "roleScopeTagIds": [
+    "0"
+  ]
+}

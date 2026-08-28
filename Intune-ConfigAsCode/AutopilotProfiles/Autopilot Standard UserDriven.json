@@ -1,0 +1,37 @@
+{
+  "id": "65de0ea0-bfea-45dd-9b64-abbe09a50ff4",
+  "hardwareHashExtractionEnabled": false,
+  "extractHardwareHash": false,
+  "lastModifiedDateTime": "2026-08-19T14:14:29.8184285Z",
+  "enrollmentStatusScreenSettings": null,
+  "enableWhiteGlove": false,
+  "managementServiceAppId": null,
+  "@odata.type": "#microsoft.graph.azureADWindowsAutopilotDeploymentProfile",
+  "preprovisioningAllowed": false,
+  "createdDateTime": "2026-08-19T14:14:29.8184285Z",
+  "description": "",
+  "outOfBoxExperienceSettings": {
+    "skipKeyboardSelectionPage": true,
+    "hideEscapeLink": true,
+    "userType": "standard",
+    "hidePrivacySettings": true,
+    "hideEULA": true,
+    "deviceUsageType": "singleUser"
+  },
+  "language": "os-default",
+  "outOfBoxExperienceSetting": {
+    "escapeLinkHidden": true,
+    "keyboardSelectionPageSkipped": true,
+    "deviceUsageType": "singleUser",
+    "userType": "standard",
+    "eulaHidden": true,
+    "privacySettingsHidden": true
+  },
+  "locale": "os-default",
+  "deviceType": "windowsPc",
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "deviceNameTemplate": "",
+  "displayName": "Autopilot Standard UserDriven"
+}

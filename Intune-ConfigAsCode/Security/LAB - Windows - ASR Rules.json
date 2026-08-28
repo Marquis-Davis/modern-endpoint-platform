@@ -1,0 +1,21 @@
+{
+  "name": "LAB - Windows - ASR Rules",
+  "creationSource": null,
+  "priorityMetaData": null,
+  "settingCount": 1,
+  "templateReference": {
+    "templateDisplayVersion": "Version 1",
+    "templateId": "e8c053d6-9f95-42b1-a7f1-ebfd71c67a4b_1",
+    "templateDisplayName": "Attack Surface Reduction Rules",
+    "templateFamily": "endpointSecurityAttackSurfaceReduction"
+  },
+  "createdDateTime": "2026-08-24T02:13:34.0009565Z",
+  "technologies": "mdm,microsoftSense",
+  "id": "ab3fae4f-9ce6-45d1-8b30-74666ed96bae",
+  "description": "Lab policy for testing and validating Microsoft Defender Attack Surface Reduction rules on Windows devices.",
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "lastModifiedDateTime": "2026-08-24T02:13:34.0009565Z",
+  "platforms": "windows10"
+}
