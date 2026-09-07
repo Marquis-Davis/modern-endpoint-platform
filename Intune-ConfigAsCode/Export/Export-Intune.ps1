@@ -99,124 +99,48 @@ else {
 # Execute Exporters
 #------------------------------------------------------------
 
-if (Get-Command Export-ConfigurationProfiles -ErrorAction SilentlyContinue) {
-    Export-ConfigurationProfiles -RepositoryRoot $RepositoryRoot
+$Exporters = @(
+    'Export-ConfigurationProfiles',
+    'Export-SettingsCatalog',
+    'Export-AdministrativeTemplates',
+    'Export-EndpointSecurity',
+    'Export-CompliancePolicies',
+    'Export-UpdateRings',
+    'Export-FeatureUpdates',
+    'Export-DriverUpdates',
+    'Export-QualityUpdates',
+    'Export-PowerShellScripts',
+    'Export-Remediations',
+    'Export-ShellScripts',
+    'Export-Win32Apps',
+    'Export-MicrosoftStoreApps',
+    'Export-iOSApps',
+    'Export-AndroidApps',
+    'Export-macOSApps',
+    'Export-AppProtectionPolicies',
+    'Export-AppConfigurationPolicies',
+    'Export-EnrollmentConfigurations',
+    'Export-AutopilotProfiles',
+    'Export-AutopilotDevices',
+    'Export-ESPProfiles',
+    'Export-DeviceCategories',
+    'Export-AssignmentFilters',
+    'Export-ScopeTags',
+    'Export-RoleDefinitions',
+    'Export-RoleAssignments',
+    'Export-TermsAndConditions'
+)
+
+$MissingExporters = @($Exporters | Where-Object {
+    -not (Get-Command -Name $_ -CommandType Function -ErrorAction SilentlyContinue)
+})
+
+if ($MissingExporters.Count -gt 0) {
+    throw "Required exporter function(s) were not loaded: $($MissingExporters -join ', ')"
 }
 
-if (Get-Command Export-SettingsCatalog -ErrorAction SilentlyContinue) {
-    Export-SettingsCatalog -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-AdministrativeTemplates -ErrorAction SilentlyContinue) {
-    Export-AdministrativeTemplates -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-EndpointSecurity -ErrorAction SilentlyContinue) {
-    Export-EndpointSecurity -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-CompliancePolicies -ErrorAction SilentlyContinue) {
-    Export-CompliancePolicies -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-UpdateRings -ErrorAction SilentlyContinue) {
-    Export-UpdateRings -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-FeatureUpdates -ErrorAction SilentlyContinue) {
-    Export-FeatureUpdates -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-DriverUpdates -ErrorAction SilentlyContinue) {
-    Export-DriverUpdates -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-QualityUpdates -ErrorAction SilentlyContinue) {
-    Export-QualityUpdates -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-PowerShellScripts -ErrorAction SilentlyContinue) {
-    Export-PowerShellScripts -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-Remediations -ErrorAction SilentlyContinue) {
-    Export-Remediations -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-ShellScripts -ErrorAction SilentlyContinue) {
-    Export-ShellScripts -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-Win32Apps -ErrorAction SilentlyContinue) {
-    Export-Win32Apps -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-MicrosoftStoreApps -ErrorAction SilentlyContinue) {
-    Export-MicrosoftStoreApps -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-iOSApps -ErrorAction SilentlyContinue) {
-    Export-iOSApps -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-AndroidApps -ErrorAction SilentlyContinue) {
-    Export-AndroidApps -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-macOSApps -ErrorAction SilentlyContinue) {
-    Export-macOSApps -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-AppProtectionPolicies -ErrorAction SilentlyContinue) {
-    Export-AppProtectionPolicies -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-AppConfigurationPolicies -ErrorAction SilentlyContinue) {
-    Export-AppConfigurationPolicies -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-EnrollmentConfigurations -ErrorAction SilentlyContinue) {
-    Export-EnrollmentConfigurations -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-AutopilotProfiles -ErrorAction SilentlyContinue) {
-    Export-AutopilotProfiles -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-AutopilotDevices -ErrorAction SilentlyContinue) {
-    Export-AutopilotDevices -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-ESPProfiles -ErrorAction SilentlyContinue) {
-    Export-ESPProfiles -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-DeviceCategories -ErrorAction SilentlyContinue) {
-    Export-DeviceCategories -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-AssignmentFilters -ErrorAction SilentlyContinue) {
-    Export-AssignmentFilters -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-ScopeTags -ErrorAction SilentlyContinue) {
-    Export-ScopeTags -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-RoleDefinitions -ErrorAction SilentlyContinue) {
-    Export-RoleDefinitions -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-RoleAssignments -ErrorAction SilentlyContinue) {
-    Export-RoleAssignments -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-TermsAndConditions -ErrorAction SilentlyContinue) {
-    Export-TermsAndConditions -RepositoryRoot $RepositoryRoot
-}
-
-if (Get-Command Export-DeviceHealthScripts -ErrorAction SilentlyContinue) {
-    Export-DeviceHealthScripts -RepositoryRoot $RepositoryRoot
+foreach ($Exporter in $Exporters) {
+    & $Exporter -RepositoryRoot $RepositoryRoot
 }
 
 Write-Host ""
